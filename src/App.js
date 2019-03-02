@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+/* import React, { Component } from 'react';
 import './App.css';
-import Todos from './Notice/Notice';
+import Todos from './Notice/Notice'; */
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core/Button';
 
 
 // I will comment everything we do//
