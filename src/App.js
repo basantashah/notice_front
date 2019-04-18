@@ -1,41 +1,21 @@
-/* import React, { Component } from 'react';
-import './App.css';
-import Todos from './Notice/Notice'; */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
-
-
-// I will comment everything we do//
+import React, { Component } from 'react';
+import {Route} from 'react-router-dom'
+import LoginPage from './component/loginPage'
+import HomePage from './component/loggedin/Home'
+import postNotice from './component/postNotice'
+import browseNotice from './component/browseNotice'
+import noticeBoardOption from './component/postNotice/noticeboardOption'
+import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
-  state = {
-    todos: [
-      {
-        id: 1,
-        title: 'Lets make a digital notice board',
-        completed: false
-      },
-
-      {
-        id: 2,
-        title: 'notice from RTE department',
-        completed: false
-      },
-
-
-      {
-        id: 3,
-        title: 'notice from academic department',
-        completed: false
-      }
-    ]
-  }
-
   render() {
     return (
-      <div className="App">
-        <Todos todos={this.state.todos} />
-      </div>
+     <div>
+       <Route exact path="/" component={LoginPage}/>
+       <Route exact path="/home" component={HomePage} />
+       <Route exact path="/notice" component={postNotice} />
+       <Route exact path="/noticeboard" component={browseNotice} />
+       <Route exact path="/noticeoption" component={noticeBoardOption} />
+     </div>
     );
   }
 }
