@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
+import './postNotice.css'
 const wrapper = {
   display:'flex',
   'flex-direction':'column',
@@ -33,17 +33,27 @@ browseNotice = () => {
 
   render() {
     return (
-     <div style={wrapper}>
-          <Button variant="contained" color="primary" onClick = {this.postNotice}>
-      Post new Notice 
-    </Button>
-    <Button variant="contained" color="primary" onClick = {this.browseNotice}>
-      update notice
-    </Button>
-    <Button variant="contained" color="primary" onClick = {this.browseNotice}>
-      delete  notice
-    </Button>
-     </div>
+     
+     
+ <div class="wrapper">
+
+<div class="jumbotron" onClick = {this.postNotice}>
+   
+   <h1  class="text-center" > Post new Notice </h1>
+   </div>
+
+   <div class="jumbotron" >
+   
+   <h1  class="text-center" > update  notice</h1>
+   </div>
+   
+   <div class="jumbotron"  >
+   
+   <h1 class="text-center" > delete  notice</h1>
+   </div>
+    </div>
+
+
     );
   }
 }

@@ -5,6 +5,7 @@ import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import './postNotice.css'
 const wrapper = {
   display:'flex',
   'flex-direction':'row',
@@ -12,22 +13,32 @@ const wrapper = {
 }
 
 
-const techCompanies = [
-  { label: "Apple", value: 1 },
-  { label: "Facebook", value: 2 },
-  { label: "Netflix", value: 3 },
-  { label: "Tesla", value: 4 },
-  { label: "Amazon", value: 5 },
-  { label: "Alphabet", value: 6 },
+const noticeType = [
+  {
+    label: "True",value:true
+  },
+  {
+    label: "False",value:false
+  },
 ];
 
-class LoginPage extends Component {
+const Urgent = [
+  {
+    label: "True",value:true
+  },
+  {
+    label: "False",value:false
+  },
+]
+
+class NoticePost extends Component {
     constructor(){
         super();
         this.state={
-            userName:'',
-            password:'',
-            startDate:new Date()
+            noticeType:null,
+            urgent:null,
+            startDate:new Date(),
+            expiryDate: new Date()
         }
        // this.handleChange = this.handleChange.bind(this)
        this.handleDate = this.handleDate.bind(this)
@@ -45,6 +56,13 @@ handleDate(date) {
   });
 }
 
+handleNoticeType = (selectedOption) => {
+  console.log('notice type',selectedOption)
+  this.setState({
+    noticeType:selectedOption.value
+  })
+}
+
 postNotice = () => {
     this.props.history.push('/notice')
 }
@@ -52,22 +70,23 @@ browseNotice = () => {
     this.props.history.push('/noticeboard')
 }
 
+
   render() {
     return (
-     
+     <div class="post-notice">
 <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Notice type</label>
-    <Select options={ techCompanies } />
-    
+    <label>Notice type</label>
+    <Select options={ noticeType } value={this.state.noticeType} onChange={this.handleNoticeType}/>
+    {console.log('test notice',this.state.noticeType)}
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Urgent</label>
-    <Select options={ techCompanies } />
+    <h3>Urgent</h3>
+    <Select options={ Urgent } />
   </div>
 
   <div class="form-group">
-    <label for="exampleInputEmail1">Date</label>
+    <label>Date</label>
     <DatePicker
         selected={this.state.startDate}
         onChange={this.handleDate}
@@ -76,34 +95,27 @@ browseNotice = () => {
   </div>
 
   <div class="form-group">
-    <label for="exampleInputEmail1">Expire period</label>
+    <label>Expire period</label>
     <DatePicker
         selected={this.state.startDate}
         onChange={this.handleDate}
       />
     {console.log(this.state.startDate)}
   </div>
+
+  
 
   <div class="form-group">
     <label for="exampleInputEmail1">Message</label>
-    <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleDate}
-      />
-    {console.log(this.state.startDate)}
-  </div>
-
-  <div class="form-group">
-    <label for="exampleInputEmail1">Message</label>
-    <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
+    <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="6"></textarea>
   </div>
 
  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-  
+</div>
     );
   }
 }
 
-export default LoginPage;
+export default NoticePost;
