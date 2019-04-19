@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux'
+import Cookies from 'universal-cookie';
+import {getToken} from './action'
 import config from '../../config/config'
 import './styles.css'
-
+import image from "../../assets/islington.png"
 
 
 
@@ -27,14 +30,18 @@ handleChange = (key,value)=> {
 handleSubmit(event){
     if(this.state.userName!=''&&this.state.password!='')
     {
+        const cookies = new Cookies();
+        cookies.set('loggedIn',true,{path:'/'})
+        cookies.set('token','tokenvalue',{path:'/'})
         this.props.history.push('/home')
-     //this should be the original
+
         //this.login()
     }
     else{
-    alert('The value is: ' );
+    alert('Username and password cannot be empty' );
     }
     event.preventDefault()
+    
 }
 
 login =async() => {
@@ -53,13 +60,14 @@ login =async() => {
           let res = await response.json();
           if(res.status){
 
-    //get user token and store in redux
-    // res.account.token
-    //after storing the token send to home
-    this.props.history.push('/home')
+            this.props.callGetToken('token value pass here')
+            const cookies = new Cookies();
+            cookies.set('loggedIn',true,{path:'/'})
+            cookies.set('token','tokenvalue',{path:'/'})
+            this.props.history.push('/home')
           }
           else{
-           //username or password not correct
+            alert('Username and password cannot be empty' );
           }
     }
     catch(e){
@@ -74,7 +82,8 @@ login =async() => {
 <div class="login-form">
 
     <form  onSubmit={this.handleSubmit}>
-        <h2 class="text-center">Log in</h2>       
+        
+        <img src={image} class="img-thumbnail" alt="Cinque Terre"/>      
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" required="required"  onChange={(text)=>{this.handleChange('userName',text)}}/>
         </div>
@@ -83,8 +92,8 @@ login =async() => {
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block" onClick = {this.handleSubmit}>Log in</button>
-        </div>
-           
+        </div> 
+        {console.log(this.props.token)}
     </form>
     
 </div>
@@ -93,22 +102,25 @@ login =async() => {
   }
 }
 
-export default withRouter(LoginPage) ;
+const mapStateToProps = state => {
+    return{
+      token : state.Token
+    
+    }
+  }
+  
+  
+  const mapDispatchToProps = dispatch =>{
+  return{
+      callGetToken:(value)=>{
+          dispatch(getToken(value))
+      }
+  }
+  }
+
+  const login = connect(mapStateToProps,mapDispatchToProps)(LoginPage)
+export default withRouter(login) ;
 
 
 
 
-{/* <form onSubmit={this.handleSubmit}>
-  <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email" value={this.state.userName} onChange={(text)=>{this.handleChange('userName',text)}}/>
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" value={this.state.password} onChange={(text)=>{this.handleChange('password',text)}} />
-  </div>
-
-  <Button variant="contained" color="primary" onClick = {this.handleSubmit}>
-      submit
-    </Button>
-</form> */}

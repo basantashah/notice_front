@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 class LoginPage extends Component {
     constructor(){
         super();
@@ -67,7 +68,9 @@ browseNotice = () => {
       <div class="row">
 {this.state.data.map((item,index)=>{
   return(
+
     <div class="col-sm-4">
+    <div class="card-wrapper">
     <div class="card">
   <div class="card-body">
   <h6 class="card-subtitle mb-2 text-muted">{item.date}</h6>
@@ -76,6 +79,7 @@ browseNotice = () => {
   <h6 class="card-subtitle mb-2 text-muted"> {item.issuer}</h6>
   
   </div>
+</div>
 </div>
 </div>
   )

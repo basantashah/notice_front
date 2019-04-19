@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {connect} from 'react-redux'
+import './index.css'
 const Wrapper = {
 display:'flex',
   flexItems:3,
-  'flex-direction':'column'
+  'flex-direction':'column',
+  width:'500px',
+  display: 'flex',
+  'justify-content': 'center',
+  'align-items': 'center'
 }
 
-class LoginPage extends Component {
+class Home extends Component {
     constructor(){
         super();
         this.state={
@@ -33,17 +38,28 @@ browseNotice = () => {
 
   render() {
     return (
-     <div style={Wrapper}>
-  <Button variant="contained" color="primary" onClick = {this.postNotice}>
-      Post new Notice 
-    </Button>
-    <Button variant="contained" color="primary" onClick = {this.browseNotice}>
-      Browse Notice Boards
-    </Button>
+      
+     <div class="wrapper">
+
+    <div class="jumbotron" onClick = {this.postNotice}>
     
+    <h1  class="text-center" >Post new notice</h1>
+    </div>
+    
+    <div class="jumbotron"  onClick = {this.browseNotice}>
+    
+    <h1 class="text-center" >Browse notice</h1>
+    </div>
      </div>
     );
   }
 }
 
-export default LoginPage;
+const mapStateToProps = state => {
+  return{
+    token : state.Token
+  }
+}
+
+const homePage = connect(mapStateToProps,null)(Home)
+export default homePage;
