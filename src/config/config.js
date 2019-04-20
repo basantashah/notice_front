@@ -5,7 +5,9 @@ const config = {
     
     login: server+'api/user/login',
     register:server+'api/auth/register',
-    notice:server+'api/notice/fetch'
+    notice:server+'api/notice/fetch',
+    yourNotice:server+'api/notice/yournotice',
+    postNotice:server+'api/notice/post'
  
 };
  

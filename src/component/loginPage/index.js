@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom'
-import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Cookies from 'universal-cookie';
 import {getToken} from './action'
 import config from '../../config/config'
@@ -16,10 +16,12 @@ class LoginPage extends Component {
         super(props);
         this.state={
             userName:'',
-            password:''
+            password:'',
+            modal:false,
         }
        // this.handleChange = this.handleChange.bind(this)
        this.handleSubmit = this.handleSubmit.bind(this)
+       this.showModal = this.showModal.bind(this)
     }
 handleChange = (key,value)=> {
     this.setState({
@@ -33,11 +35,16 @@ handleSubmit(event){
         this.login()
     }
     else{
-    alert('Username and password cannot be empty' );
+        alert("username or password empty")
     }
     event.preventDefault()
     
 }
+showModal(){
+ this.setState({
+     modal:!this.state.modal
+ })
+  }
 
 login =async() => {
     console.log("login called")
@@ -65,7 +72,9 @@ login =async() => {
             this.props.history.push('/home')
           }
           else{
-            alert('Username and password does not match' );
+            this.setState({
+                modal:!this.state.modal
+            })
           }
     }
     catch(e){
@@ -93,6 +102,16 @@ login =async() => {
         </div> 
         {console.log(this.props.token)}
     </form>
+    <Modal isOpen={this.state.modal} toggle={this.showModal} >
+          <ModalHeader toggle={this.showModal}>Login Error</ModalHeader>
+          <ModalBody>
+            Username or password does not match
+          </ModalBody>
+          <ModalFooter>
+           
+            <Button color="secondary" onClick={this.showModal}>cancel</Button>
+          </ModalFooter>
+        </Modal>
     
 </div>
 
