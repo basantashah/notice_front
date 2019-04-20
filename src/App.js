@@ -6,13 +6,14 @@ import postNotice from './component/postNotice'
 import browseNotice from './component/browseNotice'
 import noticeBoardOption from './component/postNotice/noticeboardOption'
 import {PrivateRoutes} from './component/routes'
+import {LoggedChecker} from './component/routes/logged'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {connect} from "react-redux"
 class App extends Component {
   render() {
     return (
      <div>
-       <Route exact path="/" component={LoginPage}/>
+       <LoggedChecker exact path="/" component={LoginPage}/>
        <PrivateRoutes exact path="/home" component={HomePage}  />
        <PrivateRoutes exact path="/notice" component={postNotice} />
        <PrivateRoutes exact path="/noticeboard" component={browseNotice} />

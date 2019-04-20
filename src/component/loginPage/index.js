@@ -30,12 +30,7 @@ handleChange = (key,value)=> {
 handleSubmit(event){
     if(this.state.userName!=''&&this.state.password!='')
     {
-        const cookies = new Cookies();
-        cookies.set('loggedIn',true,{path:'/'})
-        cookies.set('token','tokenvalue',{path:'/'})
-        this.props.history.push('/home')
-
-        //this.login()
+        this.login()
     }
     else{
     alert('Username and password cannot be empty' );
@@ -45,7 +40,9 @@ handleSubmit(event){
 }
 
 login =async() => {
+    console.log("login called")
     try{
+        console.log("login called inside try")
         const response = await fetch(config.login, {
             method: "POST",
             headers: {
@@ -57,17 +54,18 @@ login =async() => {
                password:this.state.password
             })
           });
+          console.log("login called inside try getting response",response)
           let res = await response.json();
           if(res.status){
-
-            this.props.callGetToken('token value pass here')
+            console.log('result',res)
+            this.props.callGetToken(res.account.token)
             const cookies = new Cookies();
             cookies.set('loggedIn',true,{path:'/'})
-            cookies.set('token','tokenvalue',{path:'/'})
+            cookies.set('token',res.account.token,{path:'/'})
             this.props.history.push('/home')
           }
           else{
-            alert('Username and password cannot be empty' );
+            alert('Username and password does not match' );
           }
     }
     catch(e){
