@@ -13,6 +13,7 @@ import {
   DropdownItem } from 'reactstrap';
   import { Link } from 'react-router-dom'
   import Cookies from 'universal-cookie';
+  import './index.css'
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -38,34 +39,38 @@ export default class Example extends React.Component {
 
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="md" style={{fontSize:'18px'}}>
           <NavbarBrand href="/home">Home</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
+            <Nav className="ml-auto float-right" navbar  >
+            <NavItem >
               {/* <Link to="/noticeboard">Browse notice</Link> */}
-                <NavLink href="/noticeboard">Browse notice</NavLink>
+                <NavLink href="/mynotice" style={{color:'#000'}}>my notice</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+              <NavItem >
+              {/* <Link to="/noticeboard">Browse notice</Link> */}
+                <NavLink href="/noticeboard" style={{color:'#000'}}>Browse notice</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar >
+                <DropdownToggle nav caret style={{color:'#000'}}>
                   Notice
                 </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                  <NavLink href="/notice">  Post new notice</NavLink>
+                <DropdownMenu right >
+                  <DropdownItem >
+                  <NavLink href="/notice" style={{color:'#000',fontSize:'18px'}}>  Post new notice</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                  <NavLink href="/notice">  Update notice</NavLink>
+                  <NavLink href="/notice" style={{color:'#000',fontSize:'18px'}}>  Update notice</NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                  <NavLink href="/notice">  Delete notice</NavLink>
+                  <NavLink href="/notice" style={{color:'#000',fontSize:'18px'}}>  Delete notice</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem onClick={this.logOut}>
-                <NavLink href="/">log out </NavLink>
+                <NavLink href="/" style={{color:'#000'}}>log out </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
