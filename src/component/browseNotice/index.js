@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import NavBar from '../navBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 class LoginPage extends Component {
@@ -65,6 +66,8 @@ browseNotice = () => {
 
   render() {
     return (
+      <div>
+        <NavBar />
       <div class="row">
 {this.state.data.map((item,index)=>{
   return(
@@ -84,6 +87,7 @@ browseNotice = () => {
 </div>
   )
 })}
+      </div>
       </div>
       
     );

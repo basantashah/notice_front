@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import NavBar from '../navBar'
 import './postNotice.css'
 const wrapper = {
   display:'flex',
@@ -33,26 +34,26 @@ browseNotice = () => {
 
   render() {
     return (
-     
-     
+        <div className="background-gradient">
+     <NavBar/>
  <div class="wrapper">
 
-<div class="jumbotron" onClick = {this.postNotice}>
+<button class="btns" onClick = {this.postNotice}>
    
    <h1  class="text-center" > Post new Notice </h1>
-   </div>
+   </button>
 
-   <div class="jumbotron" >
+   <button class="btns" >
    
    <h1  class="text-center" > update  notice</h1>
-   </div>
+   </button>
    
-   <div class="jumbotron"  >
+   <button class="btns"  >
    
    <h1 class="text-center" > delete  notice</h1>
-   </div>
+   </button>
     </div>
-
+</div>
 
     );
   }

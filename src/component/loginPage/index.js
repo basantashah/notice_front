@@ -83,9 +83,9 @@ login =async() => {
 
     <form  onSubmit={this.handleSubmit}>
         
-        <img src={image} class="img-thumbnail" alt="Cinque Terre"/>      
+        <img src={image} class="center" alt="islington"/>      
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" required="required"  onChange={(text)=>{this.handleChange('userName',text)}}/>
+            <input type="email" class="form-control" placeholder="Email" required="required"  onChange={(text)=>{this.handleChange('userName',text)}}/>
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" required="required"  onChange={(text)=>{this.handleChange('password',text)}} />
