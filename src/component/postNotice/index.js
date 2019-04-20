@@ -103,9 +103,10 @@ handleSubmit = () => {
     return (
       <div>
         <NavBar />
-     
+        <div class="post-notice-wrapper">
      <div class="post-notice">
-<form>
+     <div class="card">
+<form class="form-notice">
   <div class="form-group">
     <h4>Notice type</h4>
     <Select options={ noticeType }  onChange={this.handleNoticeType}/>
@@ -144,8 +145,10 @@ handleSubmit = () => {
   </div>
 
  
-  <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+  <button type="submit" class="btn btn-primary btn-lg btn-block" onClick={this.handleSubmit}>Submit</button>
 </form>
+</div>
+</div>
 </div>
 </div>
     );

@@ -1,21 +1,25 @@
 
 .post-notice{
-    width: 440px;
+    max-width: 60%;
     margin: 50px auto;
+    overflow:hidden
   
  
 }
 .wrapper{
     width: 440px;
     margin: 50px auto;
+    overflow:hidden
 }
 .date-picker{
-   border-radius:5px 
+   border-radius:5px;
+   height:50px;
+   width:100%
 }
-.background-gradient{
+.post-notice-wrapper{
     background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
     height: 100vh;
-    overflow: auto;
+    overflow:hidden
 }
 
 .btns{
@@ -26,4 +30,13 @@
     height:5%;
     margin-top: 10%;
 
+}
+.card {
+   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    
+  }
+.form-notice{
+    margin:30px
 }
