@@ -5,6 +5,7 @@ import App from './App';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import {store} from './reducer'
+import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.render(
 <BrowserRouter>
 <Provider store = {store}>
