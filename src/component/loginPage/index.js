@@ -32,7 +32,9 @@ handleChange = (key,value)=> {
 handleSubmit(event){
     if(this.state.userName!=''&&this.state.password!='')
     {
-        this.login()
+        
+    
+       this.login()
     }
     else{
         alert("username or password empty")
