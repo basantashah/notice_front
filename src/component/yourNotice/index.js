@@ -116,7 +116,7 @@ this.state.data.map((item,index)=>{
   if(item.urgent===true)
   return(
 
-    <div class="col-sm-4 auto" key={index}>
+    <div class="col-sm-3 auto" key={index}>
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'red'}}  >
   <div class="container-fluid" onClick={()=>this.showModal(item.title,item.content)}>
@@ -159,7 +159,7 @@ this.state.data.map((item,index)=>{
   if(item.urgent===false)
   return(
 
-    <div class="col-sm-4 auto" >
+    <div class="col-sm-3 auto" >
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'#fff'}} >
   <div class="container-fluid" onClick={()=>this.showModal(item.title,item.content)}>

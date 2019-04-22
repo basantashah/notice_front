@@ -75,7 +75,8 @@ class NoticePost extends Component {
             messageError:'Message is required',
             department:"",
             departmentError:'Please select department',
-            modal:false
+            modal:false,
+            status:true
         }
        // this.handleChange = this.handleChange.bind(this)
        this.handleStartDate = this.handleStartDate.bind(this)
@@ -147,6 +148,11 @@ handletitle = (text)=> {
   })
 }
 
+handleStatus=(e)=> {
+  this.setState({
+    status:e.value
+  })
+}
 
 
 
@@ -183,7 +189,7 @@ submitForm = async() => {
            content:this.state.message,
            department:this.state.department,
            urgent:this.state.urgent,
-           status:true
+           status:this.state.status
         })
       });
       
@@ -235,6 +241,10 @@ showModal(){
   <div class="form-group">
     <h4>Urgent</h4>
     <Select options={ Urgent } onChange={this.handleUrgent} />
+  </div>
+  <div class="form-group">
+    <h4>Status</h4>
+    <Select options={ Urgent } onChange={this.handleStatus} />
   </div>
   <div class="form-group">
     <h4>Department</h4>

@@ -172,26 +172,26 @@ this.state.data.map((item,index)=>{
   if(item.urgent==true)
   return(
 
-    <div class="col-sm-4 auto">
+    <div style={{width:250}}>
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'red'}}>
   <div class="container-fluid">
   
   <div  class="text-center">
   
-  <h6 style={{fontSize:18,color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
+  <h6 style={{fontSize:'90%',color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
   </div>
   <div class ="card-time">
 
-  <h6 class="card-subtitle  float-right">Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
+  <h6 class="card-subtitle  float-right" style={{fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
   </div>
   <div  class="text-center">
-  <p class="card-title" style={{color:'#fff',textAlign:'center'}}>{item.subject}</p>
+  <p class="card-title" style={{color:'#fff',textAlign:'center',fontSize:'90%'}}>{item.subject}</p>
   </div>
   
-  <p class="card-text"> {item.content}</p>
+  <p class="card-text" style={{fontSize:'90%'}}> {item.content}</p>
   <div  class="text-center">
-  <h6 class="card-subtitle "> {item.department}</h6>
+  <h6 class="card-subtitle " style={{fontSize:'90%'}}> {item.department}</h6>
   </div>
   </div>
   </div>
@@ -216,25 +216,25 @@ this.state.data.map((item,index)=>{
   if(item.urgent==false)
   return(
 
-    <div class="col-sm-4 auto">
+    <div style={{width:250}}>
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'#fff'}}>
   <div class="container-fluid">
   <div  class="text-center">
   
-  <h6 style={{fontSize:18,color:'#000',fontWeight:'bold'}}>{item.title}</h6>
+  <h6 style={{fontSize:'90%',color:'#000',fontWeight:'bold'}}>{item.title}</h6>
   </div>
   <div class ="card-time">
   
-  <h6 class="card-subtitle  float-right" style={{color:'#000'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
+  <h6 class="card-subtitle  float-right" style={{color:'#000',fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
   </div>
   <div  class="text-center">
-  <p class="card-title" style={{color:'#000'}}>{item.subject}</p>
+  <p class="card-title" style={{color:'#000',fontSize:'90%'}}>{item.subject}</p>
   </div>
   
-  <p class="card-text" style={{color:'#000'}}> {item.content}</p>
+  <p class="card-text" style={{color:'#000',fontSize:'90%'}}> {item.content}</p>
   <div  class="text-center">
-  <h6 class="card-subtitle " style={{color:'#000'}}> {item.department}</h6>
+  <h6 class="card-subtitle " style={{color:'#000',fontSize:'90%'}}> {item.department}</h6>
   </div>
   </div>
 </div>
