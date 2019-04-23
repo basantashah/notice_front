@@ -222,13 +222,13 @@ showModal(){
   <form class="form-notice" onSubmit={this.handleSubmit}>
   <div class="form-group">
     <h4>Title</h4>
-    <input type="text" class="form-control" placeholder="Title" required="required" value={this.state.title} onChange={(text)=>{this.handletitle(text)}}/>
+    <input type="text" class="form-control" placeholder="Title" required="required" value={this.state.title} onChange={(text)=>{this.handletitle(text)}} maxLength="20"/>
     <text style={{color:'red'}}>{this.state.showError && this.state.title=="" && this.state.titleError}</text>
     
   </div>
   <div class="form-group">
     <h4>Subject</h4>
-    <input type="text" class="form-control" placeholder="subject" required="required" value={this.state.subject} onChange={(text)=>{this.handleSubject(text)}}/>
+    <input type="text" class="form-control" placeholder="subject" required="required" value={this.state.subject} onChange={(text)=>{this.handleSubject(text)}} maxLength="30"/>
     <text style={{color:'red'}}>{this.state.showError && this.state.subject=="" && this.state.subjectError}</text>
     
   </div>
@@ -273,7 +273,7 @@ showModal(){
 
   <div class="form-group">
     <h4>Message</h4>
-    <textarea class="form-control rounded-0"  rows="6" onChange={this.handleMessage}/>
+    <textarea class="form-control rounded-0"  rows="6" onChange={this.handleMessage} maxLength="90"/>
     <text style={{color:'red'}}>{this.state.showError && this.state.message==""&&this.state.messageError}</text>
   </div>
 

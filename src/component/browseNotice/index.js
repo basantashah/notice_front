@@ -17,84 +17,7 @@ class LoginPage extends Component {
             showImportant:false,
             showNormal:false,
             data:[
-              {
-                "ID": 1,
-                "title":"this is the title",
-                "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
-                "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
-                "DeletedAt": null,
-                "subject": "New routing published",
-                "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
-                "department": "RTE department",
-                "urgent": "TRUE",
-                "status": "TRUE",
-                "user_id": 2
-            },
-            {
-              "ID": 1,
-              "title":"this is the title",
-              "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
-              "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
-              "DeletedAt": null,
-              "subject": "New routing published",
-              "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
-              "department": "RTE department",
-              "urgent": "TRUE",
-              "status": "TRUE",
-              "user_id": 2
-          },
-          {
-            "ID": 1,
-            "title":"this is the title",
-            "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
-            "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
-            "DeletedAt": null,
-            "subject": "New routing published",
-            "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
-            "department": "RTE department",
-            "urgent": "TRUE",
-            "status": "TRUE",
-            "user_id": 2
-        },
-        {
-          "ID": 1,
-          "title":"this is the title",
-          "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
-          "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
-          "DeletedAt": null,
-          "subject": "New routing published",
-          "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
-          "department": "RTE department",
-          "urgent": "TRUE",
-          "status": "TRUE",
-          "user_id": 2
-      },
-      {
-        "ID": 1,
-        "title":"this is the title",
-        "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
-        "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
-        "DeletedAt": null,
-        "subject": "New routing published",
-        "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
-        "department": "RTE department",
-        "urgent": "FALSE",
-        "status": "TRUE",
-        "user_id": 2
-    },
-    {
-      "ID": 1,
-      "title":"this is the title",
-      "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
-      "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
-      "DeletedAt": null,
-      "subject": "New routing published",
-      "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
-      "department": "RTE department",
-      "urgent": "FALSE",
-      "status": "TRUE",
-      "user_id": 2
-  }
+   
             ]
         }
        // this.handleChange = this.handleChange.bind(this)
@@ -166,7 +89,7 @@ componentDidMount = async()=> {
   </div>
 
 }
-      <div class="row">
+      <div class="row" style={{height:'10%'}}>
       {this.state.data &&
 this.state.data.map((item,index)=>{
   if(item.urgent==true)
