@@ -40,19 +40,22 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md" style={{fontSize:'18px'}}>
-          <NavbarBrand href="/home">Home</NavbarBrand>
+          <NavbarBrand href="/mynotice">Home</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto float-right" navbar  >
-            <NavItem >
-              {/* <Link to="/noticeboard">Browse notice</Link> */}
+            {/* <NavItem >
                 <NavLink href="/mynotice" style={{color:'#000'}}>my notice</NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem >
               {/* <Link to="/noticeboard">Browse notice</Link> */}
                 <NavLink href="/noticeboard" style={{color:'#000'}}>Browse notice</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar >
+              <NavItem >
+              {/* <Link to="/noticeboard">Browse notice</Link> */}
+                <NavLink href="/notice" style={{color:'#000'}}>Post notice</NavLink>
+              </NavItem>
+              {/* <UncontrolledDropdown nav inNavbar >
                 <DropdownToggle nav caret style={{color:'#000'}}>
                   Notice
                 </DropdownToggle>
@@ -68,7 +71,7 @@ export default class Example extends React.Component {
                   <NavLink href="/notice" style={{color:'#000',fontSize:'18px'}}>  Delete notice</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
               <NavItem onClick={this.logOut}>
                 <NavLink href="/" style={{color:'#000'}}>log out </NavLink>
               </NavItem>

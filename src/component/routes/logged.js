@@ -11,7 +11,7 @@ export const LoggedChecker = ({component: Component,authed, ...rest}) => {
            if(cookies.get('loggedIn')){
                return <Redirect to={
                 {
-                    pathname:"/home"
+                    pathname:"/mynotice"
                 }
             }/>
            } 

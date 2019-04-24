@@ -81,7 +81,7 @@ componentDidMount = async()=> {
   render() {
     
     return (
-      <div>
+      <div class="backGround-browse">
         <NavBar />
         {this.state.showImportant && 
 <div>

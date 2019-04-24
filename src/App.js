@@ -17,7 +17,7 @@ class App extends Component {
      <div>
        <Switch>
        <LoggedChecker exact path="/" component={LoginPage}/>
-       <PrivateRoutes exact path="/home" component={HomePage}  />
+       {/* <PrivateRoutes exact path="/home" component={HomePage}  /> */}
        <PrivateRoutes exact path="/mynotice" component={yourNotice}  />
        <PrivateRoutes exact path="/notice" component={postNotice} />
        <PrivateRoutes exact path="/noticeboard" component={browseNotice} />

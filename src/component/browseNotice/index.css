@@ -95,3 +95,10 @@
   }
 
   /* other */
+  .backGround-browse{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-image: linear-gradient(to right top, #f7fafd, #f2f5fa, #eeeff6, #ebeaf2, #e8e4ed);
+    z-index: -2;
+} 

@@ -216,7 +216,7 @@ showModal(){
 
   render() {
     return (
-      <div>
+      <div class="backGround-post">
         <NavBar />
         <div class="post-notice-wrapper">
      <div class="post-notice">
