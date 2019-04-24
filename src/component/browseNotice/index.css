@@ -65,7 +65,7 @@
    
     text-decoration: underline;
     font-size: 20px;
-    margin-top:30px;
+    margin-top:20px;
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold
@@ -102,3 +102,14 @@
     background-image: linear-gradient(to right top, #f7fafd, #f2f5fa, #eeeff6, #ebeaf2, #e8e4ed);
     z-index: -2;
 } 
+.card-time-application{
+  margin:2
+}
+
+.card-title-application{
+  text-decoration: underline;
+  margin-top:10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold
+}

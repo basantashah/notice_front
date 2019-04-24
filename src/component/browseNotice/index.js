@@ -93,37 +93,69 @@ componentDidMount = async()=> {
       {this.state.data &&
 this.state.data.map((item,index)=>{
   if(item.urgent==true)
-  return(
-
+  {
+    if(item.type=="notice")
+    {
+      return(
+        <div class="card-wrapper">
+        <div class="card" style={{backgroundColor:'red'}}>
+          <div class="container-fluid">
+          
+          <div class="text-center">
+          
+          <h6 style={{fontSize:'90%',color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
+          </div>
+          <div class ="card-time">
+        
+          <h6 class="card-subtitle  float-right" style={{fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
+          </div>
+          <div  class="text-center">
+          <p class="card-title" style={{color:'#fff',fontSize:'90%',textAlign:'center'}}>{item.subject}</p>
+          </div>
+          
+          <p class="card-text" style={{fontSize:'90%'}}> {item.content}</p>
+          <div  class="text-center">
+          <h6 class="card-subtitle " style={{fontSize:'90%'}}> {item.department}</h6>
+          </div>
+          </div>
+          </div>
+        </div>
+      )
+    }
+    else
+    return(
   
-   <div class="card-wrapper">
-<div class="card" style={{backgroundColor:'red'}}>
-  <div class="container-fluid">
+    
+     <div class="card-wrapper">
+  <div class="card" style={{backgroundColor:'red'}}>
+    <div class="container-fluid">
+    
+    <div style={{alignSelf:'start'}}>
+    
+    <h6 style={{fontSize:'90%',color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
+    </div>
+    <div class ="card-time-application" style={{alignSelf:'start'}} >
   
-  <div class="text-center">
+    <h6 class="card-subtitle  float-left" style={{fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
+    </div>
+    <div  class="card-title" style={{alignSelf:"start"}}>
+    <p  style={{color:'#fff',fontSize:'90%',textAlign:'left',textDecoration:'none'}}>{item.subject}</p>
+    </div>
+    
+    <p class="card-text" style={{fontSize:'90%'}}> {item.content}</p>
+    <div  class="float-left">
+    <h6 class="card-subtitle " style={{fontSize:'90%',textAlign:'left'}}> {item.department}</h6>
+    </div>
+    </div>
+    </div>
+  </div>
   
-  <h6 style={{fontSize:'90%',color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
-  </div>
-  <div class ="card-time">
-
-  <h6 class="card-subtitle  float-right" style={{fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
-  </div>
-  <div  class="text-center">
-  <p class="card-title" style={{color:'#fff',fontSize:'90%',textAlign:'center'}}>{item.subject}</p>
-  </div>
   
-  <p class="card-text" style={{fontSize:'90%'}}> {item.content}</p>
-  <div  class="text-center">
-  <h6 class="card-subtitle " style={{fontSize:'90%'}}> {item.department}</h6>
-  </div>
-  </div>
-  </div>
-</div>
+  
+  
+    )
+  }
 
-
-
-
-  )
 })
 }
 </div>
@@ -137,10 +169,11 @@ this.state.data.map((item,index)=>{
 {this.state.data &&
 this.state.data.map((item,index)=>{
   if(item.urgent==false)
-  return(
-
-    
-   <div class="card-wrapper">
+  {
+    if(item.type=="notice")
+    {
+      return(
+      <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'#fff'}}>
   <div class="container-fluid">
   <div  class="text-center">
@@ -161,9 +194,39 @@ this.state.data.map((item,index)=>{
   </div>
 </div>
 </div>
+      )
+    }
+    else
+    return(
+  
+      
+     <div class="card-wrapper">
+  <div class="card" style={{backgroundColor:'#fff'}}>
+    <div class="container-fluid">
+    <div style={{alignSelf:'start'}}>
+    <h6 style={{fontSize:'90%',color:'#000',fontWeight:'bold'}}>{item.title}</h6>
+    </div>
+    <div class ="card-time-application" style={{alignSelf:'start'}}>
+    
+    <h6 class="card-subtitle  float-left" style={{color:'#000',fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
+    </div>
+    <div  class="card-title" style={{alignSelf:"start"}}>
+    <p  style={{color:'#000',fontSize:'90%',textAlign:'left'}}>{item.subject}</p>
+    </div>
+    
+    <p class="card-text" style={{color:'#000',fontSize:'90%'}}> {item.content}</p>
+    <div  class="float-left">
+    <h6 class="card-subtitle " style={{color:'#000',fontSize:'90%',textAlign:'left'}}> {item.department}</h6>
+    </div>
+    </div>
+  </div>
+  </div>
+  
+  
+    )
+    
+  }
 
-
-  )
 })
 }
       </div>
