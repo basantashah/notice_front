@@ -1,5 +1,9 @@
 .card-wrapper{
+<<<<<<< HEAD
+    margin:2px;
+=======
     margin:10px;
+>>>>>>> master
     margin-bottom:15px;
     
 }
@@ -29,6 +33,10 @@
 
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+<<<<<<< HEAD
+    cursor: pointer;
+=======
+>>>>>>> master
   }
   .card-text{
       color:white;
@@ -37,7 +45,11 @@
   }
 
   .container {
+<<<<<<< HEAD
+    padding: 2px 8px;
+=======
     padding: 2px 16px;
+>>>>>>> master
   }
 
   .card-time{
@@ -47,6 +59,10 @@
     margin:20px
   }
 
+<<<<<<< HEAD
+
+  
+=======
   .card-wrapper{
     margin:10px;
     margin-bottom:15px;
@@ -90,5 +106,6 @@
   .text-center{
     margin:20px
   }
+>>>>>>> master
 
   /* other */
