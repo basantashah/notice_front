@@ -4,59 +4,59 @@ import Button from '@material-ui/core/Button';
 import NavBar from '../navBar'
 import './postNotice.css'
 const wrapper = {
-  display:'flex',
-  'flex-direction':'column',
-  
+    display: 'flex',
+    'flex-direction': 'column',
+
 }
 
 class LoginPage extends Component {
-    constructor(){
+    constructor() {
         super();
-        this.state={
-            userName:'',
-            password:''
+        this.state = {
+            userName: '',
+            password: ''
         }
-       // this.handleChange = this.handleChange.bind(this)
+        // this.handleChange = this.handleChange.bind(this)
     }
-handleChange = (key,value)=> {
-    console.log(key,value)
-    this.setState({
-        [key]:value.target.value
-    })
-}
+    handleChange = (key, value) => {
+        console.log(key, value)
+        this.setState({
+            [key]: value.target.value
+        })
+    }
 
-postNotice = () => {
-    this.props.history.push('/notice')
-}
-browseNotice = () => {
-    this.props.history.push('/noticeboard')
-}
+    postNotice = () => {
+        this.props.history.push('/notice')
+    }
+    browseNotice = () => {
+        this.props.history.push('/noticeboard')
+    }
 
-  render() {
-    return (
-        <div className="background-gradient">
-     <NavBar/>
- <div class="wrapper">
+    render() {
+        return (
+            <div className="background-gradient">
+                <NavBar />
+                <div class="wrapper">
 
-<button class="btns" onClick = {this.postNotice}>
-   
-   <h1  class="text-center" > Post new Notice </h1>
-   </button>
+                    <button class="btns" onClick={this.postNotice}>
 
-   <button class="btns" >
-   
-   <h1  class="text-center" > update  notice</h1>
-   </button>
-   
-   <button class="btns"  >
-   
-   <h1 class="text-center" > delete  notice</h1>
-   </button>
-    </div>
-</div>
+                        <h1 class="text-center" > Post new Notice </h1>
+                    </button>
 
-    );
-  }
+                    <button class="btns" >
+
+                        <h1 class="text-center" >Schedule Notice(Future)</h1>
+                    </button>
+
+                    <button class="btns"  >
+
+                        <h1 class="text-center" > Send SMS(Future)</h1>
+                    </button>
+                </div>
+            </div>
+
+        );
+    }
 }
 
 export default LoginPage;
