@@ -3,13 +3,24 @@ import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Cookies from 'universal-cookie';
+import Particles from 'react-particles-js';
 import {getToken} from './action'
 import config from '../../config/config'
 import './styles.css'
 import image from "../../assets/islington.png"
 
 
-
+const particleOpt = {
+  particles:{
+    number:{
+      value:150,
+      density:{
+        enable:true,
+        value_area:800
+      }
+    }
+  }
+}
 
 class LoginPage extends Component {
     constructor(props){
@@ -32,8 +43,8 @@ handleChange = (key,value)=> {
 handleSubmit(event){
     if(this.state.userName!=''&&this.state.password!='')
     {
-        
-   
+     
+    
         this.login()
     }
     else{
@@ -87,7 +98,12 @@ login =async() => {
   render() {
     return (
 
-
+<div className="particle">
+<div className="particleJs">
+  <Particles 
+  params={particleOpt}
+  />
+  </div>
 <div class="login-form">
 
     <form  onSubmit={this.handleSubmit}>
@@ -116,7 +132,7 @@ login =async() => {
         </Modal>
     
 </div>
-
+</div>
     );
   }
 }

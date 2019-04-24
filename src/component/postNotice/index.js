@@ -194,6 +194,7 @@ submitForm = async() => {
       });
       
       let res = await response.json();
+      console.log(res)
       if(res.status){
         this.setState({
           modal:!this.state.modal
