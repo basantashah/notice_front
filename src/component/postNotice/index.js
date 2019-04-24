@@ -21,10 +21,7 @@ const noticeType = [
   },
   {
     label: "Application",value:'application'
-  },
-  {
-    label: "Schedule",value:'schedule'
-  },
+  }
 ];
 
 const Urgent = [
@@ -83,6 +80,7 @@ class NoticePost extends Component {
        this.handleExpiryDate = this.handleExpiryDate.bind(this)
        this.handleSubmit = this.handleSubmit.bind(this)
        this.showModal = this.showModal.bind(this)
+       this.handleUrgent = this.handleUrgent.bind(this)
     }
 handleChange = (key,value)=> {
     console.log(key,value)
@@ -123,8 +121,9 @@ handleSubject = (text)=> {
 }
 
 handleUrgent = (e) => {
+  console.log('urgent',e)
   this.setState({
-    urgent:e.value
+    urgent:e
   })
 }
 
@@ -150,7 +149,7 @@ handletitle = (text)=> {
 
 handleStatus=(e)=> {
   this.setState({
-    status:e.value
+    status:e
   })
 }
 
@@ -189,7 +188,8 @@ submitForm = async() => {
            content:this.state.message,
            department:this.state.department,
            urgent:this.state.urgent,
-           status:this.state.status
+           status:this.state.status,
+           type:this.state.noticeType
         })
       });
       
@@ -210,6 +210,7 @@ showModal(){
   this.setState({
       modal:!this.state.modal
   })
+  this.props.history.push('/noticeboard')
    }
  
 
@@ -241,11 +242,14 @@ showModal(){
   </div>
   <div class="form-group">
     <h4>Urgent</h4>
-    <Select options={ Urgent } onChange={this.handleUrgent} />
+    {/* <Select options={ Urgent } onChange={this.handleUrgent} /> */}
+   <input type="checkbox" onChange={()=>this.handleUrgent(true)} checked={this.state.urgent}/> True <input type="checkbox" onChange={()=>this.handleUrgent(false)} checked={!this.state.urgent} /> False 
+  
   </div>
   <div class="form-group">
     <h4>Status</h4>
-    <Select options={ Urgent } onChange={this.handleStatus} />
+    {/* <Select options={ Urgent } onChange={this.handleStatus} /> */}
+    <input type="checkbox" onChange={()=>this.handleStatus(true)} checked={this.state.status}/> True <input type="checkbox" onChange={()=>this.handleStatus(false)} checked={!this.state.status} /> False 
   </div>
   <div class="form-group">
     <h4>Department</h4>

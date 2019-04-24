@@ -169,12 +169,12 @@ handleText = (key,value) => {
 
 handleStatus=(e)=> {
   this.setState({
-    status:e.value
+    status:e
   })
 }
 handleUrgent = (e) => {
   this.setState({
-    urgent:e.value
+    urgent:e
   })
 }
 handleDepartment = (selectedOption) => {
@@ -264,7 +264,7 @@ catch(e){
   render() {
     
     return (
-      <div style={{width:'99%'}}>
+      <div class="backGround">
         <NavBar />
         {this.state.showImportant && 
 <div>
@@ -363,7 +363,7 @@ this.state.data.map((item,index)=>{
           </div>
           :
           <div>
-            <h5>Title</h5>
+            <label style={{fontSize:16, marginRight:30}}>Title :</label>
           {this.state.title}
           </div>
           }
@@ -378,11 +378,11 @@ this.state.data.map((item,index)=>{
              </div>
              <div>
              <h5>Urgent</h5>
-             <Select  options={ Urgent } onChange={this.handleUrgent} />
+             <input type="checkbox" onChange={()=>this.handleUrgent(true)} checked={this.state.urgent}/> True <input type="checkbox" onChange={()=>this.handleUrgent(false)} checked={!this.state.urgent} /> false 
              </div>
              <div>
              <h5>Status</h5>
-             <Select options={ Urgent } onChange={this.handleStatus} />
+             <input type="checkbox" onChange={()=>this.handleStatus(true)} checked={this.state.status}/> True <input type="checkbox" onChange={()=>this.handleStatus(false)} checked={!this.state.status} /> False 
              </div>
              <div>
              <h5>Department</h5>
@@ -396,23 +396,23 @@ this.state.data.map((item,index)=>{
            :
            <div>
 <div>
-<h5>Subject</h5>
+<label style={{fontSize:16, marginRight:30}}>Subject : </label>
   {this.state.modalItem.subject}
 </div>
 <div>
-<h5>Urgent</h5>
+<label style={{fontSize:16, marginRight:30}}>Urgent : </label>
   {this.state.modalItem.urgent?"True":"False"}
   </div>
   <div>
-  <h5>Status</h5>
+  <label style={{fontSize:16, marginRight:30}}>Status : </label>
     {this.state.modalItem.status? "True":"False"}
   </div>
   <div>
-  <h5>Department</h5>
+  <label style={{fontSize:16, marginRight:30}}>Department : </label>
     {this.state.modalItem.department}
   </div>
   <div>
-  <h5>Message</h5>
+  <label style={{fontSize:16, marginRight:30}}>Message : </label>
     {this.state.modalItem.content}
   </div>
            </div>

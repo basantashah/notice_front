@@ -49,6 +49,12 @@
   }
 
 
-  
+  .backGround{
+    position: absolute;
+    height:100%;
+    width: 100%;
+    background-image: linear-gradient(to right top, #f7fafd, #f2f5fa, #eeeff6, #ebeaf2, #e8e4ed);
+    z-index: -2;
+} 
 
   /* other */
