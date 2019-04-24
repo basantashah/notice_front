@@ -11,8 +11,11 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+<<<<<<< HEAD
     height: 250px;
     width:250px;
+=======
+>>>>>>> master
    
   }
   .card-title{
@@ -24,7 +27,10 @@
     text-align: center;
     font-weight: bold;
     display: inline-block;
+<<<<<<< HEAD
     width: 100%
+=======
+>>>>>>> master
   }
   .center-block{
     margin-left:50%

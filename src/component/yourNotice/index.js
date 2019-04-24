@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import Cookies from 'universal-cookie';
+<<<<<<< HEAD
 import Select from 'react-select';
+=======
+>>>>>>> master
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import NavBar from '../navBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import moment from "moment";
 import config from '../../config/config'
+<<<<<<< HEAD
 
 
 const noticeType = [
@@ -51,6 +55,8 @@ const department = [
   },
 ]
 
+=======
+>>>>>>> master
 class LoginPage extends Component {
     constructor(){
         super();
@@ -61,6 +67,7 @@ class LoginPage extends Component {
             normal:[],
             showImportant:false,
             showNormal:false,
+<<<<<<< HEAD
             data:[
              
           
@@ -80,6 +87,16 @@ class LoginPage extends Component {
        this.showModal = this.showModal.bind(this)
        this.updateData = this.updateData.bind(this)
        this.deleteData = this.deleteData.bind(this)
+=======
+            data:[],
+            modal:false,
+            modalTitle:"",
+            modalContent:""
+            
+        }
+       // this.handleChange = this.handleChange.bind(this)
+       this.showModal = this.showModal.bind(this)
+>>>>>>> master
     }
 handleChange = (key,value)=> {
     console.log(key,value)
@@ -87,6 +104,7 @@ handleChange = (key,value)=> {
         [key]:value.target.value
     })
 }
+<<<<<<< HEAD
 showModal(item){
     console.log("modal test",item)
     
@@ -95,10 +113,21 @@ showModal(item){
             modalItem:'',
             modal:false,
             editableModal:false
+=======
+showModal(title,content){
+    console.log("modal test",title)
+    
+    if(this.state.modal){
+         this.setState({
+            modalTitle:null,
+            modalContent:null,
+            modal:false
+>>>>>>> master
         })
     }
     else{
          this.setState({
+<<<<<<< HEAD
             modalItem:item,
             title:item.title,
             subject:item.subject,
@@ -106,6 +135,10 @@ showModal(item){
             status:item.status,
             department:item.department,
             content:item.content,
+=======
+            modalTitle:title,
+            modalContent:content,
+>>>>>>> master
             modal:true
         })
     }
@@ -129,8 +162,11 @@ this.state.data.map((item,index)=>{
 }
 
 componentDidMount = async()=> {
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
   const cookies = new Cookies();
   const token = cookies.get('token')
   try{
@@ -160,6 +196,7 @@ componentDidMount = async()=> {
     console.log(e)
   }
 }
+<<<<<<< HEAD
 handleText = (key,value) => {
   this.setState({
     [key]:value.target.value
@@ -260,11 +297,18 @@ catch(e){
 
 }
 }
+=======
+
+>>>>>>> master
 
   render() {
     
     return (
+<<<<<<< HEAD
       <div style={{width:'99%'}}>
+=======
+      <div>
+>>>>>>> master
         <NavBar />
         {this.state.showImportant && 
 <div>
@@ -272,12 +316,17 @@ catch(e){
   </div>
 
 }
+<<<<<<< HEAD
       <div class="row" >
+=======
+      <div class="row">
+>>>>>>> master
       {this.state.data &&
 this.state.data.map((item,index)=>{
   if(item.urgent===true)
   return(
 
+<<<<<<< HEAD
     <div  key={index}>
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'red'}}  >
@@ -301,6 +350,30 @@ this.state.data.map((item,index)=>{
   </div>
   </div>
  
+=======
+    <div class="col-sm-3 auto" key={index}>
+   <div class="card-wrapper">
+<div class="card" style={{backgroundColor:'red'}}  >
+  <div class="container-fluid" onClick={()=>this.showModal(item.title,item.content)}>
+  
+  <div  class="text-center">
+  
+  <h6 style={{fontSize:18,color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
+  </div>
+  <div class ="card-time">
+  <h6 class="card-subtitle  float-right">Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
+  </div>
+  <div  class="text-center">
+  <p class="card-title" style={{color:'#fff',textAlign:'center'}}>{item.subject}</p>
+  </div>
+  
+  <p class="card-text"> {item.content}</p>
+  <div  class="text-center">
+  <h6 class="card-subtitle "> {item.department}</h6>
+  </div>
+  </div>
+  </div>
+>>>>>>> master
 </div>
 </div>
 
@@ -322,6 +395,7 @@ this.state.data.map((item,index)=>{
   if(item.urgent===false)
   return(
 
+<<<<<<< HEAD
     <div  >
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'#fff'}} >
@@ -341,6 +415,27 @@ this.state.data.map((item,index)=>{
   <p class="card-text" style={{color:'#000',fontSize:'90%'}}> {item.content}</p>
   <div  class="text-center">
   <h6 class="card-subtitle " style={{color:'#000',fontSize:'90%'}}> {item.department}</h6>
+=======
+    <div class="col-sm-3 auto" >
+   <div class="card-wrapper">
+<div class="card" style={{backgroundColor:'#fff'}} >
+  <div class="container-fluid" onClick={()=>this.showModal(item.title,item.content)}>
+  <div  class="text-center">
+  
+  <h6 style={{fontSize:18,color:'#000',fontWeight:'bold'}}>{item.title}</h6>
+  </div>
+  <div class ="card-time">
+  
+  <h6 class="card-subtitle  float-right" style={{color:'#000'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
+  </div>
+  <div  class="text-center">
+  <p class="card-title" style={{color:'#000'}}>{item.subject}</p>
+  </div>
+  
+  <p class="card-text" style={{color:'#000'}}> {item.content}</p>
+  <div  class="text-center">
+  <h6 class="card-subtitle " style={{color:'#000'}}> {item.department}</h6>
+>>>>>>> master
   </div>
   </div>
 </div>
@@ -354,6 +449,7 @@ this.state.data.map((item,index)=>{
       </div>
     
       <Modal isOpen={this.state.modal} toggle={this.showModal} >
+<<<<<<< HEAD
           <ModalHeader toggle={this.showModal} >
           {this.state.editableModal?
           <div>
@@ -433,6 +529,16 @@ this.state.data.map((item,index)=>{
             </div>
             }
             </ModalFooter>
+=======
+          <ModalHeader toggle={this.showModal}>{this.state.modalTitle}</ModalHeader>
+          <ModalBody>
+            {this.state.modalContent}
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.showModal}>Edit</Button>{' '}
+            <Button color="danger" onClick={this.showModal}>Delete</Button>
+          </ModalFooter>
+>>>>>>> master
         </Modal>
       </div>
       

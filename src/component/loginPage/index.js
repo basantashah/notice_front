@@ -3,13 +3,17 @@ import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Cookies from 'universal-cookie';
+<<<<<<< HEAD
 import Particles from 'react-particles-js';
+=======
+>>>>>>> master
 import {getToken} from './action'
 import config from '../../config/config'
 import './styles.css'
 import image from "../../assets/islington.png"
 
 
+<<<<<<< HEAD
 const particleOpt = {
   particles:{
     number:{
@@ -21,6 +25,9 @@ const particleOpt = {
     }
   }
 }
+=======
+
+>>>>>>> master
 
 class LoginPage extends Component {
     constructor(props){
@@ -43,9 +50,15 @@ handleChange = (key,value)=> {
 handleSubmit(event){
     if(this.state.userName!=''&&this.state.password!='')
     {
+<<<<<<< HEAD
      
     
         this.login()
+=======
+        
+    
+       this.login()
+>>>>>>> master
     }
     else{
         alert("username or password empty")
@@ -98,12 +111,16 @@ login =async() => {
   render() {
     return (
 
+<<<<<<< HEAD
 <div className="particle">
 <div className="particleJs">
   <Particles 
   params={particleOpt}
   />
   </div>
+=======
+
+>>>>>>> master
 <div class="login-form">
 
     <form  onSubmit={this.handleSubmit}>
@@ -132,7 +149,11 @@ login =async() => {
         </Modal>
     
 </div>
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> master
     );
   }
 }

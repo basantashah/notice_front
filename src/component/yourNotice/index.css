@@ -1,5 +1,9 @@
 .card-wrapper{
+<<<<<<< HEAD
     margin:2px;
+=======
+    margin:10px;
+>>>>>>> master
     margin-bottom:15px;
     
 }
@@ -29,7 +33,10 @@
 
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+<<<<<<< HEAD
     cursor: pointer;
+=======
+>>>>>>> master
   }
   .card-text{
       color:white;
@@ -38,7 +45,11 @@
   }
 
   .container {
+<<<<<<< HEAD
     padding: 2px 8px;
+=======
+    padding: 2px 16px;
+>>>>>>> master
   }
 
   .card-time{
@@ -48,7 +59,53 @@
     margin:20px
   }
 
+<<<<<<< HEAD
 
   
+=======
+  .card-wrapper{
+    margin:10px;
+    margin-bottom:15px;
+    
+}
+.card-subtitle{
+  color:white;
+  font-size: 16px
+  
+}
+
+  .card-title{
+   
+    text-decoration: underline;
+    font-size: 20px;
+    margin-top:30px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold
+  }
+  .center-block{
+    margin-left:50%
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .card-text{
+      color:white;
+      font-size: 20px;
+      text-align: left;
+  }
+
+  .container {
+    padding: 2px 16px;
+  }
+
+  .card-time{
+      margin:10px auto;
+  }
+  .text-center{
+    margin:20px
+  }
+>>>>>>> master
 
   /* other */

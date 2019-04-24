@@ -17,7 +17,88 @@ class LoginPage extends Component {
             showImportant:false,
             showNormal:false,
             data:[
+<<<<<<< HEAD
    
+=======
+              {
+                "ID": 1,
+                "title":"this is the title",
+                "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
+                "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
+                "DeletedAt": null,
+                "subject": "New routing published",
+                "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
+                "department": "RTE department",
+                "urgent": "TRUE",
+                "status": "TRUE",
+                "user_id": 2
+            },
+            {
+              "ID": 1,
+              "title":"this is the title",
+              "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
+              "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
+              "DeletedAt": null,
+              "subject": "New routing published",
+              "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
+              "department": "RTE department",
+              "urgent": "TRUE",
+              "status": "TRUE",
+              "user_id": 2
+          },
+          {
+            "ID": 1,
+            "title":"this is the title",
+            "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
+            "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
+            "DeletedAt": null,
+            "subject": "New routing published",
+            "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
+            "department": "RTE department",
+            "urgent": "TRUE",
+            "status": "TRUE",
+            "user_id": 2
+        },
+        {
+          "ID": 1,
+          "title":"this is the title",
+          "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
+          "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
+          "DeletedAt": null,
+          "subject": "New routing published",
+          "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
+          "department": "RTE department",
+          "urgent": "TRUE",
+          "status": "TRUE",
+          "user_id": 2
+      },
+      {
+        "ID": 1,
+        "title":"this is the title",
+        "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
+        "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
+        "DeletedAt": null,
+        "subject": "New routing published",
+        "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
+        "department": "RTE department",
+        "urgent": "FALSE",
+        "status": "TRUE",
+        "user_id": 2
+    },
+    {
+      "ID": 1,
+      "title":"this is the title",
+      "CreatedAt": "2019-04-20T13:28:54.188746+05:45",
+      "UpdatedAt": "2019-04-20T13:28:54.188746+05:45",
+      "DeletedAt": null,
+      "subject": "New routing published",
+      "content": "Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.Please follow the new routing published in website.this is test.",
+      "department": "RTE department",
+      "urgent": "FALSE",
+      "status": "TRUE",
+      "user_id": 2
+  }
+>>>>>>> master
             ]
         }
        // this.handleChange = this.handleChange.bind(this)
@@ -89,18 +170,30 @@ componentDidMount = async()=> {
   </div>
 
 }
+<<<<<<< HEAD
       <div class="row" style={{height:'10%'}}>
+=======
+      <div class="row">
+>>>>>>> master
       {this.state.data &&
 this.state.data.map((item,index)=>{
   if(item.urgent==true)
   return(
 
+<<<<<<< HEAD
   
+=======
+    <div style={{width:250}}>
+>>>>>>> master
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'red'}}>
   <div class="container-fluid">
   
+<<<<<<< HEAD
   <div class="text-center">
+=======
+  <div  class="text-center">
+>>>>>>> master
   
   <h6 style={{fontSize:'90%',color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
   </div>
@@ -109,7 +202,11 @@ this.state.data.map((item,index)=>{
   <h6 class="card-subtitle  float-right" style={{fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
   </div>
   <div  class="text-center">
+<<<<<<< HEAD
   <p class="card-title" style={{color:'#fff',fontSize:'90%',textAlign:'center'}}>{item.subject}</p>
+=======
+  <p class="card-title" style={{color:'#fff',textAlign:'center',fontSize:'90%'}}>{item.subject}</p>
+>>>>>>> master
   </div>
   
   <p class="card-text" style={{fontSize:'90%'}}> {item.content}</p>
@@ -119,7 +216,11 @@ this.state.data.map((item,index)=>{
   </div>
   </div>
 </div>
+<<<<<<< HEAD
 
+=======
+</div>
+>>>>>>> master
 
 
 
@@ -139,11 +240,19 @@ this.state.data.map((item,index)=>{
   if(item.urgent==false)
   return(
 
+<<<<<<< HEAD
     
+=======
+    <div style={{width:250}}>
+>>>>>>> master
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'#fff'}}>
   <div class="container-fluid">
   <div  class="text-center">
+<<<<<<< HEAD
+=======
+  
+>>>>>>> master
   <h6 style={{fontSize:'90%',color:'#000',fontWeight:'bold'}}>{item.title}</h6>
   </div>
   <div class ="card-time">
@@ -161,6 +270,10 @@ this.state.data.map((item,index)=>{
   </div>
 </div>
 </div>
+<<<<<<< HEAD
+=======
+</div>
+>>>>>>> master
 
 
   )

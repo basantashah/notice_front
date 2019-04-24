@@ -195,7 +195,7 @@ class NoticePost extends Component {
       let res = await response.json();
 
       console.log(res)
-      if(res.status){
+      if (res.status) {
         this.setState({
           modal: !this.state.modal
         })
