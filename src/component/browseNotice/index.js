@@ -95,12 +95,12 @@ this.state.data.map((item,index)=>{
   if(item.urgent==true)
   return(
 
-    <div style={{width:250}}>
+  
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'red'}}>
   <div class="container-fluid">
   
-  <div  class="text-center">
+  <div class="text-center">
   
   <h6 style={{fontSize:'90%',color:'#fff',fontWeight:'bold'}}>{item.title}</h6>
   </div>
@@ -109,7 +109,7 @@ this.state.data.map((item,index)=>{
   <h6 class="card-subtitle  float-right" style={{fontSize:'90%'}}>Date : {moment(item.CreatedAt).format("MMMM Do YYYY")}</h6>
   </div>
   <div  class="text-center">
-  <p class="card-title" style={{color:'#fff',textAlign:'center',fontSize:'90%'}}>{item.subject}</p>
+  <p class="card-title" style={{color:'#fff',fontSize:'90%',textAlign:'center'}}>{item.subject}</p>
   </div>
   
   <p class="card-text" style={{fontSize:'90%'}}> {item.content}</p>
@@ -119,7 +119,7 @@ this.state.data.map((item,index)=>{
   </div>
   </div>
 </div>
-</div>
+
 
 
 
@@ -139,12 +139,11 @@ this.state.data.map((item,index)=>{
   if(item.urgent==false)
   return(
 
-    <div style={{width:250}}>
+    
    <div class="card-wrapper">
 <div class="card" style={{backgroundColor:'#fff'}}>
   <div class="container-fluid">
   <div  class="text-center">
-  
   <h6 style={{fontSize:'90%',color:'#000',fontWeight:'bold'}}>{item.title}</h6>
   </div>
   <div class ="card-time">
@@ -160,7 +159,6 @@ this.state.data.map((item,index)=>{
   <h6 class="card-subtitle " style={{color:'#000',fontSize:'90%'}}> {item.department}</h6>
   </div>
   </div>
-</div>
 </div>
 </div>
 
