@@ -4,6 +4,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DatePicker from "react-datepicker";
 import Cookies from "universal-cookie";
+import Switch from "react-switch";
 import NavBar from "../navBar";
 import "react-datepicker/dist/react-datepicker.css";
 import "./postNotice.css";
@@ -134,7 +135,7 @@ class NoticePost extends Component {
 
   handleUrgent = e => {
     this.setState({
-      urgent: e.value
+      urgent: !this.state.urgent
     });
   };
 
@@ -159,14 +160,14 @@ class NoticePost extends Component {
 
   handleStatus = e => {
     this.setState({
-      status: e.value
+      status: !this.state.status
     });
   };
 
   handleSubmit = event => {
+    event.preventDefault();
     if (
       this.state.title == "" ||
-      this.state.noticeType == "" ||
       this.state.department == "" ||
       this.state.message == ""
     ) {
@@ -177,12 +178,13 @@ class NoticePost extends Component {
     } else {
       this.submitForm();
     }
-    event.preventDefault();
   };
 
   submitForm = async () => {
+    console.log(" i am here");
     const cookies = new Cookies();
     const token = cookies.get("token");
+
     try {
       console.log("login called inside try");
       const response = await fetch(config.postNotice, {
@@ -287,32 +289,57 @@ class NoticePost extends Component {
                   <h4>Notice type</h4>
                   {/* <Select options={noticeType} onChange={this.handleNoticeType} />
                   <text style={{ color: 'red' }}>{this.state.showError && this.state.noticeType == "" && this.state.noticeTypeError}</text> */}
-                  <div class="row-2">
-                    <input
-                      type="checkbox"
-                      value="notice"
-                      checked={this.state.notice}
-                      onClick={() => this.handleNotice("notice")}
-                    />
-                    Notice
-                    <br />
-                    <input
-                      type="checkbox"
-                      value="application"
-                      checked={this.state.application}
-                      onClick={() => this.handleNotice("application")}
-                    />
-                    Application
-                    <br />
+                  <div class="row">
+                    <div style={{ justifyContent: "center", marginRight: 20 }}>
+                      <input
+                        style={{ marginRight: 10, marginLeft: 20 }}
+                        type="checkbox"
+                        value="notice"
+                        checked={this.state.notice}
+                        onClick={() => this.handleNotice("notice")}
+                      />
+                      Notice
+                      <br />
+                    </div>
+                    <div style={{ justifyContent: "center" }}>
+                      <input
+                        style={{ marginRight: 10, marginLeft: 20 }}
+                        type="checkbox"
+                        value="application"
+                        checked={this.state.application}
+                        onClick={() => this.handleNotice("application")}
+                      />
+                      Application
+                      <br />
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
+                <div class="row" style={{marginLeft:5}}>
                   <h4>Urgent</h4>
-                  <Select options={Urgent} onChange={this.handleUrgent} />
+                  {/* <Select options={Urgent} onChange={this.handleUrgent} /> */}
+                  <div style={{marginLeft:20}}>
+                  <Switch
+                    onChange={this.handleUrgent}
+                    checked={this.state.urgent}
+                    id="normal-switch"
+                  />
+                  </div>
+                  </div>
                 </div>
                 <div class="form-group">
+                <div class="row" style={{marginLeft:5}}>
                   <h4>Status</h4>
-                  <Select options={Urgent} onChange={this.handleStatus} />
+                  {/* <Select options={Urgent} onChange={this.handleStatus} /> */}
+                  <div style={{marginLeft:20}}>
+                  <Switch
+                    onChange={this.handleStatus}
+                    checked={this.state.status}
+                    id="normal-switch"
+                  />
+                
+                  </div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <h4>Department</h4>
