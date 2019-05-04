@@ -190,7 +190,8 @@ class NoticePost extends Component {
           content: this.state.message,
           department: this.state.department,
           urgent: this.state.urgent,
-          status: this.state.status
+          status: this.state.status,
+          type:this.state.notice?"notice":"application"
         })
       });
 
