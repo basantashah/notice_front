@@ -43,9 +43,12 @@ handleChange = (key,value)=> {
 handleSubmit(event){
     if(this.state.userName!=''&&this.state.password!='')
     {
-     
+      // const cookies = new Cookies();
+      // cookies.set('loggedIn',true,{path:'/'})
+      // cookies.set('token','token',{path:'/'})
+      // this.props.history.push('/home')
     
-        this.login()
+         this.login()
     }
     else{
         alert("username or password empty")

@@ -52,7 +52,7 @@
 
   .card-wrapper{
     margin:10px;
-    margin-bottom:15px;
+    margin-bottom:10px;
     
 }
 .card-subtitle{
@@ -95,3 +95,142 @@
   }
 
   /* other */
+.mainRectangle{
+width: 300px;
+height: 300px;
+margin:5px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+
+background: #FFFFFF;
+}
+.rectangleTitle{
+margin-right: 10px;
+margin-top: 10px;
+width: 270px;
+height: 35px;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+}
+.rectangleTime{
+margin-top: 8px;
+margin-right: 10px;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+}
+.rectangleSubject{
+  margin-right: 10px;
+  margin-top: 10px;
+width: 270px;
+height: 38px;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+}
+
+.rectangleBody{
+  margin-right: 10px;
+margin-top: 8px;
+width: 265px;
+height: 111px;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+
+color: #000000;
+}
+.rectangleDepart{
+  margin-right: 10px;
+width: 250px;
+height: 23px;
+margin-top: 28px;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 14px;
+
+color: #000000;
+}
+
+.noticeRectangle{
+  width: 300px;
+  height: 300px;
+  margin:5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background: #FFFFFF;
+}
+.noticeTitle{
+  margin-top:10px;
+width: 273px;
+height: 33px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 15px;
+text-align: center;
+color: #000000;
+}
+.noticeTime{
+  margin-top: 10px;
+  width: 265px;
+  height: 18px;
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #000000;
+}
+.noticeSubject{
+  width: 273px;
+  height: 33px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 15px;
+  text-align: center;
+  color: #000000;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.noticeBody{
+  margin-top: 20px;
+  width: 265px;
+  height: 111px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+}
+.noticeDepart{
+  margin-top: 20px;
+  width: 254px;
+  height: 21px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #000000;
+  text-align: right;
+}

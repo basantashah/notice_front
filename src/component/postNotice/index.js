@@ -76,7 +76,9 @@ class NoticePost extends Component {
       department: "",
       departmentError: 'Please select department',
       modal: false,
-      status: true
+      status: true,
+      notice:true,
+      application:false
     }
     // this.handleChange = this.handleChange.bind(this)
     this.handleStartDate = this.handleStartDate.bind(this)
@@ -211,7 +213,23 @@ class NoticePost extends Component {
       modal: !this.state.modal
     })
   }
-
+  handleNotice =(key)=>{
+    console.log(key)
+    switch(key){
+      case 'notice':
+        this.setState({
+          notice:true,
+          application:false
+        })
+        return
+      case 'application':
+        this.setState({
+          notice:false,
+          application:true
+        })
+        return
+    }
+  }
 
   render() {
     return (
@@ -233,11 +251,14 @@ class NoticePost extends Component {
                   <text style={{ color: 'red' }}>{this.state.showError && this.state.subject == "" && this.state.subjectError}</text>
 
                 </div>
-                <div class="form-group">
+                <div class="form-group" >
                   <h4>Notice type</h4>
-                  <Select options={noticeType} onChange={this.handleNoticeType} />
-                  <text style={{ color: 'red' }}>{this.state.showError && this.state.noticeType == "" && this.state.noticeTypeError}</text>
-
+                  {/* <Select options={noticeType} onChange={this.handleNoticeType} />
+                  <text style={{ color: 'red' }}>{this.state.showError && this.state.noticeType == "" && this.state.noticeTypeError}</text> */}
+                   <div class="row-2">
+                   <input type="checkbox"  value="notice" checked={this.state.notice} onClick={()=>this.handleNotice('notice')}/>Notice<br/>
+                   <input type="checkbox"  value="application" checked={this.state.application} onClick={()=>this.handleNotice('application')}/>Application<br/>
+                   </div>
                 </div>
                 <div class="form-group">
                   <h4>Urgent</h4>
