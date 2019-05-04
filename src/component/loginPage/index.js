@@ -85,7 +85,7 @@ login =async() => {
             const cookies = new Cookies();
             cookies.set('loggedIn',true,{path:'/'})
             cookies.set('token',res.account.token,{path:'/'})
-            this.props.history.push('/home')
+            this.props.history.push('/noticeboard')
           }
           else{
             this.setState({

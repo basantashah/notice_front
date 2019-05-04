@@ -41,7 +41,7 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md" style={{ fontSize: '18px' }}>
-          <NavbarBrand href="/home">Home</NavbarBrand>
+          <NavbarBrand href="/noticeboard">Home</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto float-right" navbar  >
