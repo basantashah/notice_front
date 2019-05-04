@@ -350,7 +350,7 @@ class NoticePost extends Component {
                     class="form-control rounded-0"
                     rows="6"
                     onChange={this.handleMessage}
-                    maxLength="1000"
+                    maxLength="300"
                   />
                   <text style={{ color: "red" }}>
                     {this.state.showError &&
