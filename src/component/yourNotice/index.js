@@ -107,15 +107,14 @@ class LoginPage extends Component {
         editableModal: false
       });
     } else {
-      if (item.type =='notice') {
+      if (item.type == "notice") {
         this.setState({
           isNotice: true
         });
-      }
-      else{
+      } else {
         this.setState({
-          isNotice:false
-        })
+          isNotice: false
+        });
       }
       this.setState({
         modalItem: item,
@@ -179,10 +178,10 @@ class LoginPage extends Component {
     });
   };
   handleType = e => {
-this.setState({
-  isNotice:e
-})
-  }
+    this.setState({
+      isNotice: e
+    });
+  };
 
   handleStatus = e => {
     this.setState({
@@ -225,7 +224,7 @@ this.setState({
         this.setState({
           modal: !this.state.modal
         });
-        this.componentDidMount()
+        this.componentDidMount();
       }
     } catch (e) {}
   };
@@ -253,7 +252,7 @@ this.setState({
           subject: this.state.subject,
           title: this.state.title,
           urgent: this.state.urgent,
-          type:this.state.isNotice?"notice":"application",
+          type: this.state.isNotice ? "notice" : "application",
           user_id: this.state.modalItem.user_id
         })
       });
@@ -264,7 +263,7 @@ this.setState({
         this.setState({
           modal: !this.state.modal
         });
-        this.componentDidMount()
+        this.componentDidMount();
       }
     } catch (e) {}
   };
@@ -412,7 +411,7 @@ this.setState({
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Title"
+                  placeholder="Update the title of the notice"
                   required="required"
                   value={this.state.title}
                   onChange={text => this.handleText("title", text)}
@@ -434,7 +433,7 @@ this.setState({
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="subject"
+                    placeholder="Update the subject of your notice"
                     required="required"
                     value={this.state.subject}
                     onChange={text => this.handleText("subject", text)}
@@ -564,7 +563,7 @@ this.setState({
                 >
                   cancel
                 </Button>{" "}
-                <Button color="danger" onClick={()=>this.updateData()}>
+                <Button color="danger" onClick={() => this.updateData()}>
                   update
                 </Button>
               </div>
@@ -576,7 +575,7 @@ this.setState({
                 >
                   Edit
                 </Button>{" "}
-                <Button color="danger" onClick={()=>this.deleteData()}>
+                <Button color="danger" onClick={() => this.deleteData()}>
                   Delete
                 </Button>
               </div>

@@ -252,7 +252,7 @@ class NoticePost extends Component {
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Title"
+                    placeholder="Enter the title of the notice"
                     required="required"
                     value={this.state.title}
                     onChange={text => {
@@ -271,7 +271,7 @@ class NoticePost extends Component {
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="subject"
+                    placeholder="Enter the subject of your notice"
                     required="required"
                     value={this.state.subject}
                     onChange={text => {
@@ -315,30 +315,29 @@ class NoticePost extends Component {
                   </div>
                 </div>
                 <div class="form-group">
-                <div class="row" style={{marginLeft:5}}>
-                  <h4>Urgent</h4>
-                  {/* <Select options={Urgent} onChange={this.handleUrgent} /> */}
-                  <div style={{marginLeft:20}}>
-                  <Switch
-                    onChange={this.handleUrgent}
-                    checked={this.state.urgent}
-                    id="normal-switch"
-                  />
-                  </div>
+                  <div class="row" style={{ marginLeft: 5 }}>
+                    <h4>Urgent</h4>
+                    {/* <Select options={Urgent} onChange={this.handleUrgent} /> */}
+                    <div style={{ marginLeft: 20 }}>
+                      <Switch
+                        onChange={this.handleUrgent}
+                        checked={this.state.urgent}
+                        id="normal-switch"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
-                <div class="row" style={{marginLeft:5}}>
-                  <h4>Status</h4>
-                  {/* <Select options={Urgent} onChange={this.handleStatus} /> */}
-                  <div style={{marginLeft:20}}>
-                  <Switch
-                    onChange={this.handleStatus}
-                    checked={this.state.status}
-                    id="normal-switch"
-                  />
-                
-                  </div>
+                  <div class="row" style={{ marginLeft: 5 }}>
+                    <h4>Status</h4>
+                    {/* <Select options={Urgent} onChange={this.handleStatus} /> */}
+                    <div style={{ marginLeft: 20 }}>
+                      <Switch
+                        onChange={this.handleStatus}
+                        checked={this.state.status}
+                        id="normal-switch"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
