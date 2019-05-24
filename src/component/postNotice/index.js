@@ -220,6 +220,8 @@ class NoticePost extends Component {
     this.setState({
       modal: !this.state.modal
     });
+    this.props.history.push('/mynotice')
+    
   }
   handleNotice = key => {
     console.log(key);

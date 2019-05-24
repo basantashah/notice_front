@@ -1,6 +1,6 @@
 
 
-const server='https://a6f5da49.ngrok.io/'
+const server='https://27e95fe8.ngrok.io/'
 const config = {
     
     login: server+'api/user/login',

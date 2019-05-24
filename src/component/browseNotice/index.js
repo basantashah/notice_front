@@ -7,6 +7,7 @@ import "./index.css";
 import moment from "moment";
 import config from "../../config/config";
 import star from "../../assets/rStar.png";
+import { async } from "q";
 class LoginPage extends Component {
   constructor() {
     super();
@@ -22,6 +23,7 @@ class LoginPage extends Component {
       ]
     };
     // this.handleChange = this.handleChange.bind(this)
+    this.getBrowseData = this.getBrowseData.bind(this)
   }
   handleChange = (key, value) => {
     console.log(key, value);
@@ -45,9 +47,8 @@ class LoginPage extends Component {
       }
     });
   };
-
-  componentDidMount = async () => {
-    const cookies = new Cookies();
+getBrowseData = async()=>{
+  const cookies = new Cookies();
     const token = cookies.get("token");
     try {
       const res = await fetch(config.notice, {
@@ -71,8 +72,14 @@ class LoginPage extends Component {
     } catch (e) {
       console.log(e);
     }
+}
+  componentDidMount = async () => {
+    this.updateNotice = setInterval(() => this.getBrowseData(), 1000);
+    
   };
-
+componentWillUnmount = ()=> {
+  clearInterval(this.updateNotice);
+}
   urgentFormatter = item => {
     if (item.type == "application") {
       return (

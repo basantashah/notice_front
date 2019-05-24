@@ -90,6 +90,7 @@ class LoginPage extends Component {
     this.showModal = this.showModal.bind(this);
     this.updateData = this.updateData.bind(this);
     this.deleteData = this.deleteData.bind(this);
+    this.myNotice = this.myNotice.bind(this)
   }
   handleChange = (key, value) => {
     console.log(key, value);
@@ -145,33 +146,40 @@ class LoginPage extends Component {
       }
     });
   };
-
-  componentDidMount = async () => {
-    const cookies = new Cookies();
-    const token = cookies.get("token");
-    try {
-      const res = await fetch(config.yourNotice, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token
-        }
-      });
-
-      let response = await res.json();
-      console.log("res", response);
-      if (response.status == true) {
-        await this.setState({
-          data: response.data
-        });
-        this.checkData();
-      } else {
+myNotice = async() =>{
+  const cookies = new Cookies();
+  const token = cookies.get("token");
+  try {
+    const res = await fetch(config.yourNotice, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token
       }
-    } catch (e) {
-      console.log(e);
+    });
+
+    let response = await res.json();
+    console.log("res", response);
+    if (response.status == true) {
+      await this.setState({
+        data: response.data
+      });
+      this.checkData();
+    } else {
     }
+  } catch (e) {
+    console.log(e);
+  }
+}
+  
+  componentDidMount = async () => {
+    this.updateNotice = setInterval(() => this.myNotice(), 1000);
+    
   };
+  componentWillUnmount = ()=> {
+    clearInterval(this.updateNotice);
+  }
   handleText = (key, value) => {
     this.setState({
       [key]: value.target.value
