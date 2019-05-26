@@ -181,7 +181,7 @@ class NoticePost extends Component {
   };
 
   submitForm = async () => {
-    console.log(" i am here");
+    // console.log(" i am here");
     const cookies = new Cookies();
     const token = cookies.get("token");
 
@@ -196,6 +196,7 @@ class NoticePost extends Component {
         },
         body: JSON.stringify({
           title: this.state.title,
+          schedule: this.state.startDate,
           expiry: this.state.expiryDate,
           subject: this.state.subject,
           content: this.state.message,
@@ -220,6 +221,7 @@ class NoticePost extends Component {
     this.setState({
       modal: !this.state.modal
     });
+    this.props.history.push("/mynotice");
   }
   handleNotice = key => {
     console.log(key);
@@ -293,7 +295,7 @@ class NoticePost extends Component {
                     <div style={{ justifyContent: "center", marginRight: 20 }}>
                       <input
                         style={{ marginRight: 10, marginLeft: 20 }}
-                        type="checkbox"
+                        type="radio"
                         value="notice"
                         checked={this.state.notice}
                         onClick={() => this.handleNotice("notice")}
@@ -304,7 +306,7 @@ class NoticePost extends Component {
                     <div style={{ justifyContent: "center" }}>
                       <input
                         style={{ marginRight: 10, marginLeft: 20 }}
-                        type="checkbox"
+                        type="radio"
                         value="application"
                         checked={this.state.application}
                         onClick={() => this.handleNotice("application")}
@@ -353,7 +355,7 @@ class NoticePost extends Component {
                   </text>
                 </div>
                 <div class="form-group">
-                  <h4>Date</h4>
+                  <h4>Schedule Date</h4>
                   <DatePicker
                     className="date-picker"
                     selected={this.state.startDate}
@@ -362,7 +364,7 @@ class NoticePost extends Component {
                 </div>
 
                 <div class="form-group">
-                  <h4>Expire period</h4>
+                  <h4>Expire date</h4>
                   <DatePicker
                     className="date-picker"
                     selected={this.state.expiryDate}
@@ -397,7 +399,7 @@ class NoticePost extends Component {
         </div>
         <Modal isOpen={this.state.modal} toggle={this.showModal}>
           <ModalHeader toggle={this.showModal}>Successful</ModalHeader>
-          <ModalBody>your notice is posted.</ModalBody>
+          <ModalBody>your notice has been posted.</ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.showModal}>
               Ok

@@ -7,6 +7,7 @@ import "./index.css";
 import moment from "moment";
 import config from "../../config/config";
 import star from "../../assets/rStar.png";
+import { async } from "q";
 class LoginPage extends Component {
   constructor() {
     super();
@@ -17,11 +18,10 @@ class LoginPage extends Component {
       normal: [],
       showImportant: false,
       showNormal: false,
-      data: [
-       
-      ]
+      data: []
     };
     // this.handleChange = this.handleChange.bind(this)
+    this.getBrowseData = this.getBrowseData.bind(this);
   }
   handleChange = (key, value) => {
     console.log(key, value);
@@ -45,8 +45,7 @@ class LoginPage extends Component {
       }
     });
   };
-
-  componentDidMount = async () => {
+  getBrowseData = async () => {
     const cookies = new Cookies();
     const token = cookies.get("token");
     try {
@@ -72,7 +71,12 @@ class LoginPage extends Component {
       console.log(e);
     }
   };
-
+  componentDidMount = async () => {
+    this.updateNotice = setInterval(() => this.getBrowseData(), 5000);
+  };
+  componentWillUnmount = () => {
+    clearInterval(this.updateNotice);
+  };
   urgentFormatter = item => {
     if (item.type == "application") {
       return (
@@ -84,7 +88,7 @@ class LoginPage extends Component {
                 alt="important"
                 height="30"
                 width="30"
-                style={{ marginTop: -15, marginRight: -15 }}
+                style={{ marginTop: -15, marginRight: -15, marginLeft: -15 }}
               />
             </div>
             <div style={{ padding: 10 }}>
@@ -167,14 +171,14 @@ class LoginPage extends Component {
       <div>
         <NavBar />
 
-        <div class="row" style={{ margin:5 }}>
+        <div class="row" style={{ margin: 5 }}>
           {this.state.data &&
             this.state.data.map((item, index) => {
               if (item.urgent == true) return this.urgentFormatter(item);
             })}
         </div>
 
-        <div class="row" style={{ margin:5 }}>
+        <div class="row" style={{ margin: 5 }}>
           {this.state.data &&
             this.state.data.map((item, index) => {
               if (item.urgent == false) return this.normalFormatter(item);
@@ -186,4 +190,3 @@ class LoginPage extends Component {
 }
 
 export default LoginPage;
-

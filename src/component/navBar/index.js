@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -10,10 +10,11 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
-  import { Link } from 'react-router-dom'
-  import Cookies from 'universal-cookie';
-  import './index.css'
+  DropdownItem
+} from "reactstrap";
+import { Link } from "react-router-dom";
+import Cookies from "universal-cookie";
+import "./index.css";
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
@@ -25,9 +26,9 @@ export default class Example extends React.Component {
     this.logOut = this.logOut.bind(this);
   }
 
-  logOut(){
+  logOut() {
     const cookies = new Cookies();
-    cookies.remove('loggedIn',true,{path:'/'})
+    cookies.remove("loggedIn", true, { path: "/" });
   }
   toggle() {
     this.setState({
@@ -35,25 +36,27 @@ export default class Example extends React.Component {
     });
   }
   render() {
-    
-
     return (
       <div>
-        <Navbar color="light" light expand="md" style={{fontSize:'18px'}}>
+        <Navbar color="light" light expand="md" style={{ fontSize: "18px" }}>
           <NavbarBrand href="/mynotice">Home</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto float-right" navbar  >
-            {/* <NavItem >
+            <Nav className="ml-auto float-right" navbar>
+              {/* <NavItem >
                 <NavLink href="/mynotice" style={{color:'#000'}}>my notice</NavLink>
               </NavItem> */}
-              <NavItem >
-              {/* <Link to="/noticeboard">Browse notice</Link> */}
-                <NavLink href="/noticeboard" style={{color:'#000'}}>Browse notice</NavLink>
+              <NavItem>
+                {/* <Link to="/noticeboard">Browse notice</Link> */}
+                <NavLink href="/noticeboard" style={{ color: "#000" }}>
+                  Browse notice
+                </NavLink>
               </NavItem>
-              <NavItem >
-              {/* <Link to="/noticeboard">Browse notice</Link> */}
-                <NavLink href="/notice" style={{color:'#000'}}>Post notice</NavLink>
+              <NavItem>
+                {/* <Link to="/noticeboard">Browse notice</Link> */}
+                <NavLink href="/notice" style={{ color: "#000" }}>
+                  Post notice
+                </NavLink>
               </NavItem>
               {/* <UncontrolledDropdown nav inNavbar >
                 <DropdownToggle nav caret style={{color:'#000'}}>
@@ -73,7 +76,9 @@ export default class Example extends React.Component {
                 </DropdownMenu>
               </UncontrolledDropdown> */}
               <NavItem onClick={this.logOut}>
-                <NavLink href="/" style={{color:'#000'}}>log out </NavLink>
+                <NavLink href="/" style={{ color: "#000" }}>
+                  log out{" "}
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

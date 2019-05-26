@@ -1,247 +1,234 @@
-
-.card-wrapper{
-  margin:5px;
-  margin-bottom:5px;
-  
+.card-wrapper {
+  margin: 5px;
+  margin-bottom: 5px;
 }
-.card-subtitle{
-color:white;
-font-size: 16px
-
+.card-subtitle {
+  color: white;
+  font-size: 16px;
 }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   height: 250px;
-  width:250px;
- 
+  width: 250px;
 }
-.card-title{
+.card-title {
   color: white;
   text-decoration: underline;
   font-size: 20px;
-  margin-top:30px;
+  margin-top: 30px;
   margin-bottom: 10px;
   text-align: center;
   font-weight: bold;
   display: inline-block;
-  width: 100%
+  width: 100%;
 }
-.center-block{
-  margin-left:50%
+.center-block {
+  margin-left: 50%;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.card-text{
-    color:white;
-    font-size: 20px;
-    text-align: left;
+.card-text {
+  color: white;
+  font-size: 20px;
+  text-align: left;
 }
 
 .container {
   padding: 2px 16px;
 }
 
-.card-time{
-    margin:10px auto;
+.card-time {
+  margin: 10px auto;
 }
-.text-center{
-  margin:20px
-}
-
-.card-wrapper{
-  margin:10px;
-  margin-bottom:10px;
-  
-}
-.card-subtitle{
-color:white;
-font-size: 16px
-
+.text-center {
+  margin: 20px;
 }
 
-.card-title{
- 
+.card-wrapper {
+  margin: 10px;
+  margin-bottom: 10px;
+}
+.card-subtitle {
+  color: white;
+  font-size: 16px;
+}
+
+.card-title {
   text-decoration: underline;
   font-size: 20px;
-  margin-top:30px;
+  margin-top: 30px;
   margin-bottom: 10px;
   text-align: center;
-  font-weight: bold
+  font-weight: bold;
 }
-.center-block{
-  margin-left:50%
+.center-block {
+  margin-left: 50%;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-.card-text{
-    color:white;
-    font-size: 20px;
-    text-align: left;
+.card-text {
+  color: white;
+  font-size: 20px;
+  text-align: left;
 }
 
 .container {
   padding: 2px 16px;
 }
 
-.card-time{
-    margin:10px auto;
+.card-time {
+  margin: 10px auto;
 }
-.text-center{
-  margin:20px
+.text-center {
+  margin: 20px;
 }
 
 /* other */
-.mainRectangle{
-width: 300px;
-height: 300px;
-margin:5px;
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-transition: 0.3s;
+.mainRectangle {
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 
-background: #FFFFFF;
+  background: #ffffff;
 }
-.rectangleTitle{
-margin-right: 10px;
-margin-top: 10px;
-width: 270px;
-height: 35px;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 16px;
+.rectangleTitle {
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 270px;
+  height: 35px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
 
-color: #000000;
+  color: #000000;
 }
-.rectangleTime{
-margin-top: 8px;
-margin-right: 10px;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 16px;
+.rectangleTime {
+  margin-top: 8px;
+  margin-right: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
 
-color: #000000;
+  color: #000000;
 }
-.rectangleSubject{
-margin-right: 10px;
-margin-top: 10px;
-width: 270px;
-height: 38px;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 16px;
+.rectangleSubject {
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 270px;
+  height: 38px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
 
-color: #000000;
-}
-
-.rectangleBody{
-margin-right: 10px;
-margin-top: 8px;
-width: 265px;
-height: 111px;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 17px;
-
-color: #000000;
-}
-.rectangleDepart{
-margin-right: 10px;
-width: 250px;
-height: 23px;
-margin-top: 28px;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 14px;
-
-color: #000000;
+  color: #000000;
 }
 
-.noticeRectangle{
-width: 300px;
-height: 300px;
-margin:5px;
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-transition: 0.3s;
-background: #FFFFFF;
+.rectangleBody {
+  margin-right: 10px;
+  margin-top: 8px;
+  width: 265px;
+  height: 111px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #000000;
 }
-.noticeTitle{
-margin-top:10px;
-width: 273px;
-height: 33px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 15px;
-text-align: center;
-color: #000000;
-}
-.noticeTime{
-margin-top: 10px;
-width: 265px;
-height: 18px;
-text-align: right;
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 14px;
-color: #000000;
-}
-.noticeSubject{
-width: 273px;
-height: 33px;
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 15px;
-text-align: center;
-color: #000000;
-margin-top: 10px;
-text-decoration: underline;
+.rectangleDepart {
+  margin-right: 10px;
+  width: 250px;
+  height: 23px;
+  margin-top: 28px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+
+  color: #000000;
 }
 
-.noticeBody{
-margin-top: 20px;
-width: 265px;
-height: 111px;
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 17px;
-text-align: center;
-color: #000000;
+.noticeRectangle {
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background: #ffffff;
 }
-.noticeDepart{
-margin-top: 20px;
-width: 254px;
-height: 21px;
-font-style: normal;
-font-weight: bold;
-font-size: 14px;
-line-height: 16px;
-text-align: center;
-color: #000000;
-text-align: right;
+.noticeTitle {
+  margin-top: 10px;
+  width: 273px;
+  height: 33px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 15px;
+  text-align: center;
+  color: #000000;
+}
+.noticeTime {
+  margin-top: 10px;
+  width: 265px;
+  height: 18px;
+  text-align: right;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: #000000;
+}
+.noticeSubject {
+  width: 273px;
+  height: 33px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 15px;
+  text-align: center;
+  color: #000000;
+  margin-top: 10px;
+  text-decoration: underline;
 }
 
-.star{
-position:absolute;
-
-
+.noticeBody {
+  margin-top: 20px;
+  width: 265px;
+  height: 111px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+}
+.noticeDepart {
+  margin-top: 20px;
+  width: 254px;
+  height: 21px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #000000;
+  text-align: right;
 }
 
-
-
-
+.star {
+  position: absolute;
+}

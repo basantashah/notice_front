@@ -1,4 +1,4 @@
-const server = "https://27e95fe8.ngrok.io/";
+const server = "http://localhost:8000/";
 const config = {
   login: server + "api/user/login",
   register: server + "api/auth/register",
