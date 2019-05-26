@@ -9,7 +9,7 @@ import moment from "moment";
 import config from "../../config/config";
 import star from "../../assets/rStar.png";
 import Switch from "react-switch";
-
+import DatePicker from "react-datepicker";
 const noticeType = [
   {
     label: "Notice",
@@ -84,13 +84,17 @@ class LoginPage extends Component {
       urgent: null,
       status: null,
       department: null,
-      content: null
+      content: null,
+      startDate:null,
+      expiryDate:null
     };
     // this.handleChange = this.handleChange.bind(this)
     this.showModal = this.showModal.bind(this);
     this.updateData = this.updateData.bind(this);
     this.deleteData = this.deleteData.bind(this);
-    this.myNotice = this.myNotice.bind(this)
+    this.myNotice = this.myNotice.bind(this);
+    this.handleStartDate = this.handleStartDate.bind(this);
+    this.handleExpiryDate = this.handleExpiryDate.bind(this);
   }
   handleChange = (key, value) => {
     console.log(key, value);
@@ -98,6 +102,18 @@ class LoginPage extends Component {
       [key]: value.target.value
     });
   };
+  handleStartDate(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+
+  handleExpiryDate(date) {
+    this.setState({
+      expiryDate: date
+    });
+  }
+
   showModal(item) {
     console.log("modal test", item);
 
@@ -125,6 +141,8 @@ class LoginPage extends Component {
         status: item.status,
         department: item.department,
         content: item.content,
+        startDate:item.schedule,
+        expiryDate:item.expiry,
         type: item.type,
         modal: true
       });
@@ -254,10 +272,11 @@ myNotice = async() =>{
           UpdatedAt: this.state.modalItem.UpdatedAt,
           content: this.state.content,
           department: this.state.department,
-          expiry: this.state.modalItem.expiry,
+          expiry: this.state.expiryDate,
           id: this.state.modalItem.id,
           status: this.state.status,
           subject: this.state.subject,
+          schedule:this.state.startDate,
           title: this.state.title,
           urgent: this.state.urgent,
           type: this.state.isNotice ? "notice" : "application",
@@ -292,7 +311,7 @@ myNotice = async() =>{
             <div style={{ padding: 10 }}>
               <div class="rectangleTitle">{item.title}</div>
               <div class="rectangleTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="rectangleSubject">{item.subject}</div>
               <div class="rectangleBody">{item.content}</div>
@@ -317,7 +336,7 @@ myNotice = async() =>{
             <div style={{ padding: 10 }}>
               <div class="noticeTitle">{item.title}</div>
               <div class="noticeTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="noticeSubject">{item.subject}</div>
               <div class="noticeBody">{item.content}</div>
@@ -336,7 +355,7 @@ myNotice = async() =>{
             <div style={{ padding: 10 }}>
               <div class="rectangleTitle">{item.title}</div>
               <div class="rectangleTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="rectangleSubject">{item.subject}</div>
               <div class="rectangleBody">{item.content}</div>
@@ -352,7 +371,7 @@ myNotice = async() =>{
             <div style={{ padding: 10 }}>
               <div class="noticeTitle">{item.title}</div>
               <div class="noticeTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="noticeSubject">{item.subject}</div>
               <div class="noticeBody">{item.content}</div>
@@ -501,6 +520,23 @@ myNotice = async() =>{
                     onChange={this.handleStatus}
                     checked={this.state.status}
                     id="normal-switch"
+                  />
+                </div>
+                <div class="form-group">
+                  <h4>Schedule Date</h4>
+                  <DatePicker
+                    className="date-picker"
+                    selected={this.state.startDate}
+                    onChange={this.handleStartDate}
+                  />
+                </div>
+
+                <div class="form-group">
+                  <h4>Expire date</h4>
+                  <DatePicker
+                    className="date-picker"
+                    selected={this.state.expiryDate}
+                    onChange={this.handleExpiryDate}
                   />
                 </div>
                 <div>

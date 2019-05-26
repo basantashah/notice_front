@@ -95,7 +95,7 @@ class LoginPage extends Component {
             <div style={{ padding: 10 }}>
               <div class="rectangleTitle">{item.title}</div>
               <div class="rectangleTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="rectangleSubject">{item.subject}</div>
               <div class="rectangleBody">{item.content}</div>
@@ -121,7 +121,7 @@ class LoginPage extends Component {
             <div style={{ padding: 10 }}>
               <div class="noticeTitle">{item.title}</div>
               <div class="noticeTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="noticeSubject">{item.subject}</div>
               <div class="noticeBody">{item.content}</div>
@@ -142,7 +142,7 @@ class LoginPage extends Component {
             <div style={{ padding: 10 }}>
               <div class="rectangleTitle">{item.title}</div>
               <div class="rectangleTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="rectangleSubject">{item.subject}</div>
               <div class="rectangleBody">{item.content}</div>
@@ -159,7 +159,7 @@ class LoginPage extends Component {
             <div style={{ padding: 10 }}>
               <div class="noticeTitle">{item.title}</div>
               <div class="noticeTime">
-                {moment(item.CreatedAt).format("MMMM Do YYYY")}
+                {moment(item.schedule).format("MMMM Do YYYY")}
               </div>
               <div class="noticeSubject">{item.subject}</div>
               <div class="noticeBody">{item.content}</div>
