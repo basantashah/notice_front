@@ -78,7 +78,8 @@ class LoginPage extends Component {
     clearInterval(this.updateNotice);
   };
   urgentFormatter = item => {
-    if (item.type == "application") {
+    let today = moment(item.schedule).isSame(moment(), 'day');
+    if (item.type == "application" && today) {
       return (
         <div class="card-wrapper">
           <div class="mainRectangle">
@@ -104,6 +105,7 @@ class LoginPage extends Component {
         </div>
       );
     } else {
+      if(today){
       return (
         <div class="card-wrapper">
           <div class="noticeRectangle">
@@ -128,10 +130,12 @@ class LoginPage extends Component {
           </div>
         </div>
       );
+      }
     }
   };
   normalFormatter = item => {
-    if (item.type == "application") {
+    let today = moment(item.schedule).isSame(moment(), 'day');
+    if (item.type == "application" && today) {
       return (
         <div class="card-wrapper">
           <div class="mainRectangle">
@@ -148,6 +152,7 @@ class LoginPage extends Component {
         </div>
       );
     } else {
+      if(today){
       return (
         <div class="card-wrapper">
           <div class="noticeRectangle">
@@ -163,6 +168,7 @@ class LoginPage extends Component {
           </div>
         </div>
       );
+      }
     }
   };
 

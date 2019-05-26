@@ -45,3 +45,8 @@
     background-image: linear-gradient(to right top, #f7fafd, #f2f5fa, #eeeff6, #ebeaf2, #e8e4ed);
     z-index: -2;
 } 
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+}
