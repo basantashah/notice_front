@@ -78,10 +78,10 @@ class LoginPage extends Component {
     clearInterval(this.updateNotice);
   };
   urgentFormatter = item => {
-    let today = moment(item.schedule).isSame(moment(), 'day');
+    let today = moment(item.schedule).isAfter(moment(), 'day');
     if (item.type == "application" && today) {
       return (
-        <div class="card-wrapper">
+        <div class="card-wrapper" key={item.id}>
           <div class="mainRectangle">
             <div class="star">
               <img
@@ -107,7 +107,7 @@ class LoginPage extends Component {
     } else {
       if(today){
       return (
-        <div class="card-wrapper">
+        <div class="card-wrapper" key={item.id}>
           <div class="noticeRectangle">
             <div class="star">
               <img
@@ -134,10 +134,10 @@ class LoginPage extends Component {
     }
   };
   normalFormatter = item => {
-    let today = moment(item.schedule).isSame(moment(), 'day');
+    let today = moment(item.schedule).isAfter(moment(), 'day');
     if (item.type == "application" && today) {
       return (
-        <div class="card-wrapper">
+        <div class="card-wrapper" key={item.id}>
           <div class="mainRectangle">
             <div style={{ padding: 10 }}>
               <div class="rectangleTitle">{item.title}</div>
@@ -154,7 +154,7 @@ class LoginPage extends Component {
     } else {
       if(today){
       return (
-        <div class="card-wrapper">
+        <div class="card-wrapper" key={item.id}>
           <div class="noticeRectangle">
             <div style={{ padding: 10 }}>
               <div class="noticeTitle">{item.title}</div>
