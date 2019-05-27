@@ -79,7 +79,11 @@ class LoginPage extends Component {
   };
   urgentFormatter = item => {
     let today = moment(item.schedule).isAfter(moment(), 'day');
-    if (item.type == "application" && today) {
+    let expiry = moment(moment(),'day').isBefore(item.expiry)
+    console.log("today",today)
+    console.log("Expiry",expiry)
+    console.log("today and expiry",today && expiry)
+    if (item.type == "application" && today && expiry) {
       return (
         <div class="card-wrapper" key={item.id}>
           <div class="mainRectangle">
@@ -105,7 +109,7 @@ class LoginPage extends Component {
         </div>
       );
     } else {
-      if(today){
+      if(today && expiry){
       return (
         <div class="card-wrapper" key={item.id}>
           <div class="noticeRectangle">
@@ -135,7 +139,8 @@ class LoginPage extends Component {
   };
   normalFormatter = item => {
     let today = moment(item.schedule).isAfter(moment(), 'day');
-    if (item.type == "application" && today) {
+    let expiry = moment(moment(),'day').isBefore(item.expiry)
+    if (item.type == "application" && today && expiry ) {
       return (
         <div class="card-wrapper" key={item.id}>
           <div class="mainRectangle">
@@ -149,10 +154,10 @@ class LoginPage extends Component {
               <div class="rectangleDepart">{item.department}</div>
             </div>
           </div>
-        </div>
+        </div> 
       );
     } else {
-      if(today){
+      if(today && expiry ){
       return (
         <div class="card-wrapper" key={item.id}>
           <div class="noticeRectangle">
