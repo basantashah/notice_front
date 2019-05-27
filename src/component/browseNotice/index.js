@@ -78,7 +78,7 @@ class LoginPage extends Component {
     clearInterval(this.updateNotice);
   };
   urgentFormatter = item => {
-    let today = moment(item.schedule).isAfter(moment(), 'day');
+    let today = moment(item.schedule).isAfter(moment().subtract(1,'d'), 'day');
     let expiry = moment(moment(),'day').isBefore(item.expiry)
     console.log("today",today)
     console.log("Expiry",expiry)
@@ -138,7 +138,7 @@ class LoginPage extends Component {
     }
   };
   normalFormatter = item => {
-    let today = moment(item.schedule).isAfter(moment(), 'day');
+    let today = moment(item.schedule).isAfter(moment().subtract(1,'d'), 'day');
     let expiry = moment(moment(),'day').isBefore(item.expiry)
     if (item.type == "application" && today && expiry ) {
       return (
